@@ -1,0 +1,32 @@
+# Introduction
+
+```{r}
+#| echo: false
+#| cache: false
+library(tidyverse)
+# fill for font awesome icons
+fa_fill <- "#606060"
+```
+
+## Licensing
+
+<br>
+
+This work is licensed under [Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/).
+
+
+## Presenters
+
+::: columns
+::: {.column width="50%"}
+**Daniel D. Sjoberg**
+
+![](images/dan-circle.png){width="70%"}
+
+:::
+::: {.column width="50%"}
+**Mark Baillie**
+
+![](images/mark-circle.png){width="70%"}
+:::
+:::
