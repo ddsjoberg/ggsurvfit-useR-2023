@@ -36,7 +36,6 @@ website:
        text: Slides
      - href: license.qmd
 
-
 format:
   html:
     theme: [cosmo, theme.scss]
@@ -47,4 +46,5 @@ format:
     highlight-style: a11y
 
 editor: source
+engine: knitr
 
