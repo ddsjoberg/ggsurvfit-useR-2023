@@ -9,7 +9,6 @@ website:
   page-navigation: true
   title: "Introduction to the {ggsurvfit} R Package"
   description: "Presented at R/Basel 2023"
-  site-url: "https://danieldsjoberg.com/ggsurvfit-useR-2023"
   favicon: "images/ggsurvfit-logo.png"
 
   repo-url: https://github.com/ddsjoberg/ggsurvfit-useR-2023
@@ -34,6 +33,8 @@ website:
        text: Home
      - href: slidespage.qmd
        text: Slides
+     - href: https://www.danieldsjoberg.com/ggsurvfit
+       text: Package Website
      - href: license.qmd
 
 format:
