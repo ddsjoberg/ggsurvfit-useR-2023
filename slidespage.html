@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction to the {ggsurvfit} R Package - Visualizing Survival Data with the {ggsurvfit} R Package</title>
+<title>Introduction to the {ggsurvfit} R Package - Slides</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,7 +29,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./slidespage.html" rel="next">
+<link href="./license.qmd" rel="next">
+<link href="./index.html" rel="prev">
 <link href="./images/ggsurvfit-logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -73,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Home</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./slidespage.html">Slides</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -103,13 +104,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./slidespage.html" class="sidebar-item-text sidebar-link">
+  <a href="./slidespage.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Slides</span></a>
   </div>
 </li>
@@ -119,22 +120,14 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract">Abstract</a></li>
-  <li><a href="#presenters" id="toc-presenters" class="nav-link" data-scroll-target="#presenters">Presenters</a></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ddsjoberg/ggsurvfit-useR-2023/edit/main/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/ddsjoberg/ggsurvfit-useR-2023/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Visualizing Survival Data with the {ggsurvfit} R Package</h1>
-<p class="subtitle lead">R/Basel 2023</p>
+<h1 class="title">Slides</h1>
 </div>
 
 
@@ -149,27 +142,10 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<hr>
-<p>🗓 July 21, 2023 | Time TBD</p>
-<p>🏨 Roche Campus, Grenzacherstrasse 124, 4070 Basel, Switzerland</p>
-<p>💥 <a href="https://user-regional-2023.gitlab.io/basel/">Conference Registration</a></p>
-<hr>
-<section id="abstract" class="level1">
-<h1>Abstract</h1>
-<p>The {ggsurvfit} package eases the creation of time-to-event or survival analysis summary figures with {ggplot2}, such as a Kaplan-Meier plot. The concise and modular code creates figures ready for publication. Each {ggsurvfit} function (e.g.&nbsp;<code>add_confidence_interval()</code>, <code>add_risktable()</code>, etc.) is written as a proper {ggplot2} ‘geom’, meaning the package functions can be woven with {ggplot2} functions. The implication is that you do not need to learn new functions to style the plot: rather, you may rely on the suite of {ggplot2} functions you already know.</p>
-<p>Lastly, the package includes gems for those using the CDISC ADaM ADTTE data model. The “PARAM” value is used to construct enhanced labels in the figure. The event indicator, “CNSR”, is coded in the opposite way the {survival} package expects. This difference creates an opportunity for errors to be silently introduced in an analysis. The {ggsurvfit} package exports a function called <code>Surv_CNSR()</code> to resolve this concern by creating a survival object that uses ADTTE coding conventions as the default. The function can be used in {ggsurvfit} as well as any other package with a survival endpoint.</p>
-</section>
-<section id="presenters" class="level1">
-<h1>Presenters</h1>
-<p><img src="images/dan-circle.png" class="img-fluid" style="float:left;padding: 0 10px 0 0;" alt="Headshot of Daniel Sjoberg" width="150"></p>
-<p><a href="https://www.danieldsjoberg.com/"><strong>Daniel D. Sjoberg</strong></a> (he/him) is a Software Engineer and Genentech. Previously, he was a Lead Data Science Manager at the Prosate Cancer Clinical Trials Consortium, and a Senior Biostatistician at Memorial Sloan Kettering Cancer Center in New York City. He enjoys R package development, creating many packages available on <a href="https://cran.r-project.org/web/packages/">CRAN</a>, <a href="https://ddsjoberg.r-universe.dev/ui#packages">R-Universe</a>, and <a href="https://github.com/ddsjoberg">GitHub</a>. His research interests include adaptive methods in clinical trials, precision medicine, and predictive modeling. Daniel is the winner of the 2021 American Statistical Association (ASA) Innovation in Statistical Programming and Analytics award.</p>
-<p><a href="https://www.danieldsjoberg.com"><code>r fontawesome::fa("link")</code></a> <a href="https://www.linkedin.com/in/ddsjoberg/"><code>r fontawesome::fa("linkedin")</code></a> <a href="https://github.com/ddsjoberg/"><code>r fontawesome::fa("github")</code></a> <a href="https://mastodon.social/@ddsjoberg"><code>r fontawesome::fa("mastodon")</code></a> <a href="https://twitter.com/statistishdan"><code>r fontawesome::fa("twitter")</code></a></p>
-<p><br> <br></p>
-<!-- You can create a circle crop of your headshot with https://github.com/doehm/cropcircles if you don't already have one -->
-<p><a href="https://graphicsprinciples.github.io/"><strong>Mark Baillie</strong></a></p>
+<p><a href="./slides/index.html">View slides in full screen</a></p>
+<iframe class="slide-deck" src="./slides/" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -407,10 +383,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Home</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./slidespage.html" class="pagination-link">
-        <span class="nav-page-text">Slides</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./license.qmd" class="pagination-link">
+        <span class="nav-page-text"></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -420,7 +399,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>. Inspired by <a href="https://twitter.com/minebocek"><span class="citation" data-cites="minebocek">@minebocek</span></a>.</div>   
     <div class="nav-footer-center">
       &nbsp;
-    </div>
+    <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ddsjoberg/ggsurvfit-useR-2023/edit/main/slidespage.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/ddsjoberg/ggsurvfit-useR-2023/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
