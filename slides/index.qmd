@@ -1,6 +1,6 @@
 ---
 title: "Visualizing Survival Data with the {ggsurvfit} R Package"
-author: "Daniel D. Sjoberg & Mark Baille"
+author: "Daniel D. Sjoberg & Mark Baillie"
 footer: "[{ggsurvfit} R Package](https://danieldsjoberg.com/ggsurvfit-useR-2023)"
 logo: "images/ggsurvfit-logo.png"
 editor: source
