@@ -4,6 +4,7 @@ author: "Daniel D. Sjoberg & Mark Baillie"
 footer: "[{ggsurvfit} R Package](https://danieldsjoberg.com/ggsurvfit-useR-2023)"
 logo: "images/ggsurvfit-logo.png"
 editor: source
+engine: knitr
 format: 
   revealjs: 
     theme: slides.scss

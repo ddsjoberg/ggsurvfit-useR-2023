@@ -23,7 +23,13 @@ The {ggsurvfit} package eases the creation of time-to-event or survival analysis
 
 Lastly, the package includes gems for those using the CDISC ADaM ADTTE data model. The "PARAM" value is used to construct enhanced labels in the figure. The event indicator, "CNSR", is coded in the opposite way the {survival} package expects. This difference creates an opportunity for errors to be silently introduced in an analysis. The {ggsurvfit} package exports a function called `Surv_CNSR()` to resolve this concern by creating a survival object that uses ADTTE coding conventions as the default. The function can be used in {ggsurvfit} as well as any other package with a survival endpoint.
 
-# Presenters
+Install {ggsurvfit} from CRAN with
+
+```r
+install.packages('ggsurvfit')
+```
+
+# Authors
 
 
 ![](images/dan-circle.png){style="float:left;padding: 0 10px 0 0;" fig-alt="Headshot of Daniel Sjoberg" width="150"}
