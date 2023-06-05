@@ -19,14 +19,19 @@ This work is licensed under [Creative Commons Zero v1.0 Universal](https://creat
 
 ::: columns
 ::: {.column width="50%"}
+::: {.center}
 **Daniel D. Sjoberg**
 
-![](images/dan-circle.png){width="70%"}
+![](images/dan-circle-cropped.png){width="70%"}
 ![](images/genentech-logo.png){width="50%"}
 :::
+:::
+
 ::: {.column width="50%"}
+::: {.center}
 **Mark Baillie**
 
 ![](images/mark-circle.png){width="70%"}
+:::
 :::
 :::

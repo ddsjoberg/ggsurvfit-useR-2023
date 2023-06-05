@@ -14,6 +14,11 @@ $light-bg-text-color: #363A42;
 
 /*-- scss:rules --*/
 
+.center {
+  margin: auto;
+  text-align: center;
+}
+
 .emphasis {
   font-weight: bold;
   color: $custom-col;
