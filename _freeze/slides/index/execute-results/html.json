@@ -1,7 +1,7 @@
 {
-  "hash": "d781cf3d4b6c5f9a6a4b4f087470deb7",
+  "hash": "2b08a74fd8deebc30726ee96f002fa20",
   "result": {
-    "markdown": "---\ntitle: \"Visualizing Survival Data with the {ggsurvfit} R Package\"\nauthor: \"Daniel D. Sjoberg & Mark Baille\"\nfooter: \"[{ggsurvfit} R Package](https://danieldsjoberg.com/ggsurvfit-useR-2023)\"\nlogo: \"images/ggsurvfit-logo.png\"\neditor: source\nformat: \n  revealjs: \n    theme: slides.scss\n    transition: fade\n    slide-number: true\n    chalkboard: true\nexecute:\n  echo: true\n  freeze: auto\ncache: true\n---\n# Introduction\n\n::: {.cell}\n\n:::\n\n## Licensing\n\n<br>\n\nThis work is licensed under [Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/).\n\n\n## Presenters\n\n::: columns\n::: {.column width=\"50%\"}\n**Daniel D. Sjoberg**\n\n![](images/dan-circle.png){width=\"70%\"}\n\n:::\n::: {.column width=\"50%\"}\n**Mark Baillie**\n\n![](images/mark-circle.png){width=\"70%\"}\n:::\n:::\n\n",
+    "markdown": "---\ntitle: \"Visualizing Survival Data with the {ggsurvfit} R Package\"\nauthor: \"Daniel D. Sjoberg & Mark Baillie\"\nfooter: \"[{ggsurvfit} R Package](https://danieldsjoberg.com/ggsurvfit-useR-2023)\"\nlogo: \"images/ggsurvfit-logo.png\"\neditor: source\nformat: \n  revealjs: \n    theme: slides.scss\n    transition: fade\n    slide-number: true\n    chalkboard: true\nexecute:\n  echo: true\n  freeze: auto\ncache: true\n---\n# Introduction\n\n::: {.cell}\n\n:::\n\n## Licensing\n\n<br>\n\nThis work is licensed under [Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/).\n\n\n## Presenters\n\n::: columns\n::: {.column width=\"50%\"}\n**Daniel D. Sjoberg**\n\n![](images/dan-circle.png){width=\"70%\"}\n\n:::\n::: {.column width=\"50%\"}\n**Mark Baillie**\n\n![](images/mark-circle.png){width=\"70%\"}\n:::\n:::\n\n",
     "supporting": [
       "index_files"
     ],
