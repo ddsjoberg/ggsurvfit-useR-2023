@@ -1,6 +1,7 @@
 ---
 title: "Visualizing Survival Data with the {ggsurvfit} R Package"
 subtitle: "R/Basel 2023"
+engine: knitr
 editor: 
   markdown: 
     wrap: 72
