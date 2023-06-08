@@ -19,9 +19,17 @@ editor:
 
 # Abstract
 
-The {ggsurvfit} package eases the creation of time-to-event or survival analysis summary figures with {ggplot2}, such as a Kaplan-Meier plot. The concise and modular code creates figures ready for publication. Each {ggsurvfit} function (e.g. `add_confidence_interval()`, `add_risktable()`, etc.) is written as a proper {ggplot2} ‘geom’, meaning the package functions can be woven with {ggplot2} functions. The implication is that you do not need to learn new functions to style the plot: rather, you may rely on the suite of {ggplot2} functions you already know.
+The {ggsurvfit} package eases the creation of time-to-event or survival analysis summary figures with {ggplot2}, such as a Kaplan-Meier plot.
+The concise and modular code creates figures ready for publication.
+Each {ggsurvfit} function (e.g. `add_confidence_interval()`, `add_risktable()`, etc.) is written as a proper {ggplot2} ‘geom’, meaning the package functions can be woven with {ggplot2} functions.
+The implication is that you do not need to learn new functions to style the plot: rather, you may rely on the suite of {ggplot2} functions you already know.
 
-Lastly, the package includes gems for those using the CDISC ADaM ADTTE data model. The "PARAM" value is used to construct enhanced labels in the figure. The event indicator, "CNSR", is coded in the opposite way the {survival} package expects. This difference creates an opportunity for errors to be silently introduced in an analysis. The {ggsurvfit} package exports a function called `Surv_CNSR()` to resolve this concern by creating a survival object that uses ADTTE coding conventions as the default. The function can be used in {ggsurvfit} as well as any other package with a survival endpoint.
+Lastly, the package includes gems for those using the CDISC ADaM ADTTE data model.
+The "PARAM" value is used to construct enhanced labels in the figure.
+The event indicator, "CNSR", is coded in the opposite way the {survival} package expects.
+This difference creates an opportunity for errors to be silently introduced in an analysis.
+The {ggsurvfit} package exports a function called `Surv_CNSR()` to resolve this concern by creating a survival object that uses ADTTE coding conventions as the default.
+The function can be used in {ggsurvfit} as well as any other package with a survival endpoint.
 
 Install {ggsurvfit} from CRAN with
 
