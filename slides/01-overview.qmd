@@ -1,0 +1,89 @@
+# Outline
+
+::: {.larger2}
+
+* Overview of package functionality
+
+* Discussion for ggplot2-extenders 
+
+:::
+
+# Data
+
+Examples use a labeled version of the `survival::colon` data set.
+
+::: columns
+::: {.column width="50%"}
+```{r}
+library(ggsurvfit)
+library(gtsummary)
+library(tidyverse)
+
+df_colon <- df_colon |> select(time, status, surg)
+df_colon
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+df_colon |> 
+  tbl_summary()
+```
+:::
+:::
+
+# Basic Example
+
+::: columns
+::: {.column width="80%"}
+
+```{r}
+survfit2(Surv(time, status) ~ surg, data = df_colon) |> 
+  ggsurvfit() +
+  add_risktable()
+```
+
+:::
+::: {.column width="20%"}
+::: {.smaller}
+::: {.incremental}
+
+* The Good
+  - Simple code and figure is nearly publishable
+  - Risk table with both no. at risk and events easily added
+  - x-axis label taken from the `time` column label
+  - Can use **ggplot2** `+` notation
+
+  
+* The Could-Be-Better
+  - Y-axis label is incorrect, and the range of axis is best 0-100%
+  - Axis padding a bit more than I prefer for a Kaplan-Meier figure
+  - X-axis typically has more tick marks for Kaplan-Meier figure
+
+:::
+:::
+:::
+:::
+
+# Basic Example
+
+```{r}
+survfit2(Surv(time, status) ~ surg, data = df_colon) |> 
+  ggsurvfit() +
+  add_risktable() +
+  scale_ggsurvfit() +
+  labs(y = "Recurrence-free Probability")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+

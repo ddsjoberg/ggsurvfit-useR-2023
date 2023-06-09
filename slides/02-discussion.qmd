@@ -1,0 +1,9 @@
+# Outline
+
+::: {.larger2}
+
+* Overview of package functionality
+
+* Discussion for ggplot2-extenders 
+
+:::
