@@ -24,7 +24,7 @@ list(`as_gt-lst:addl_cmds` = list(tab_spanner = rlang::expr(gt::tab_options(tabl
   gtsummary::set_gtsummary_theme()
 ```
 
-<!-- {{< include 00-setup.qmd >}} -->
+{{< include 00-setup.qmd >}}
 
 {{< include 01-overview.qmd >}}
 
