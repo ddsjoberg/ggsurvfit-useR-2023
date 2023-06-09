@@ -2,7 +2,7 @@
 
 ::: {.larger2}
 
-* **Overview of package functionality**
+* Overview of package functionality
 
 * Discussion for ggplot2-extenders 
 
@@ -12,14 +12,17 @@
 
 Examples use a labeled version of the `survival::colon` data set.
 
+
 ```{r}
 #| echo: false
-list(`as_gt-lst:addl_cmds` = list(tab_spanner = rlang::expr(gt::tab_options(table.font.size = 22)))) |> 
+list(`as_gt-lst:addl_cmds` = list(tab_spanner = rlang::expr(gt::tab_options(table.font.size = 33)))) |> 
   gtsummary::set_gtsummary_theme()
 ```
 
+
 ::: columns
 ::: {.column width="50%"}
+
 ```{r}
 library(ggsurvfit)
 library(gtsummary)
@@ -28,14 +31,16 @@ library(tidyverse)
 df_colon <- df_colon |> select(time, status, surg)
 df_colon
 ```
+
 :::
 
 ::: {.column width="50%"}
+
 ```{r}
-#| freeze: false
 df_colon |> 
   tbl_summary()
 ```
+
 :::
 :::
 
@@ -44,11 +49,13 @@ df_colon |>
 ::: columns
 ::: {.column width="80%"}
 
+
 ```{r}
 survfit2(Surv(time, status) ~ surg, data = df_colon) |> 
   ggsurvfit() +
   add_risktable()
 ```
+
 
 :::
 ::: {.column width="20%"}
@@ -76,6 +83,7 @@ survfit2(Surv(time, status) ~ surg, data = df_colon) |>
 
 ::: columns
 ::: {.column width="80%"}
+
 ```{r}
 survfit2(Surv(time, status) ~ surg, data = df_colon) |> 
   ggsurvfit() +
@@ -83,6 +91,7 @@ survfit2(Surv(time, status) ~ surg, data = df_colon) |>
   scale_ggsurvfit() +
   labs(y = "Recurrence-free Progression")
 ```
+
 
 :::
 ::: {.column width="20%"}
@@ -105,6 +114,7 @@ survfit2(Surv(time, status) ~ surg, data = df_colon) |>
 
 ::: columns
 ::: {.column width="80%"}
+
 ```{r}
 survfit2(Surv(time, status) ~ surg, data = df_colon) |> 
   ggsurvfit() +
@@ -113,6 +123,7 @@ survfit2(Surv(time, status) ~ surg, data = df_colon) |>
   labs(y = "Recurrence-free Progression") +
   ggeasy::easy_move_legend("top")
 ```
+
 
 :::
 ::: {.column width="20%"}
@@ -133,22 +144,12 @@ survfit2(Surv(time, status) ~ surg, data = df_colon) |>
 
 # Another Example
 
+
 ```{r}
-#| output-location: slide
-#| code-line-numbers: "|2|3|4-5|6|7|8|10-12"
 survfit2(Surv(time, status) ~ surg, data = df_colon) |>
-  ggsurvfit(type = "risk", linewidth = 1.2) +
+  ggsurvfit() +
   add_confidence_interval() +
-  add_risktable(risktable_stats = "n.risk") +
-  add_risktable_strata_symbol(symbol = "\U25CF", size = 17) +
-  add_quantile(x_value = 5, linetype = "dotted", linewidth = 0.8) +
-  add_censor_mark(size = 2, alpha = 0.2) +
-  add_pvalue(caption = "Log-rank {p.value}") +
-  scale_ggsurvfit() +
-  scale_color_manual(values = c('#54738E', '#82AC7C')) +
-  scale_fill_manual(values = c('#54738E', '#82AC7C')) +
-  labs(y = "Risk of Recurrence")
+  add_risktable(risktable_group = "risktable_stats") +
+  add_risktable_strata_symbol(symbol = "\U25CF", size = 17)
 ```
-
-
 

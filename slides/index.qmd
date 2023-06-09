@@ -17,14 +17,9 @@ execute:
 cache: true
 ---
 
-```{r}
-#| echo: false
-
-list(`as_gt-lst:addl_cmds` = list(tab_spanner = rlang::expr(gt::tab_options(table.font.size = 33)))) |> 
-  gtsummary::set_gtsummary_theme()
-```
-
 {{< include 00-setup.qmd >}}
 
 {{< include 01-overview.qmd >}}
+
+{{< include 02-discussion.qmd >}}
 

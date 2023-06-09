@@ -1,7 +1,5 @@
-ggsurvfit
-ggplot2
-gtsummary
 tidyverse
+ggplot2
 tibble
 tidyr
 readr
@@ -10,3 +8,6 @@ dplyr
 stringr
 forcats
 lubridate
+ggsurvfit
+gtsummary
+patchwork
