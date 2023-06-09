@@ -404,10 +404,33 @@ Daniel D. Sjoberg &amp; Mark Baillie
 </div>
 
 </section>
-<section class="slide level2">
+<section>
+<section id="introduction" class="title-slide slide level1 center">
+<h1>Introduction</h1>
 
-<!-- {{< include 00-setup.qmd >}} -->
 </section>
+<section id="licensing" class="slide level2">
+<h2>Licensing</h2>
+<p><br></p>
+<p>This work is licensed under <a href="https://creativecommons.org/publicdomain/zero/1.0/">Creative Commons Zero v1.0 Universal</a>.</p>
+</section>
+<section id="authors" class="slide level2">
+<h2>Authors</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center">
+<p><strong>Daniel D. Sjoberg</strong></p>
+<p><img data-src="images/dan-circle-cropped.png" style="width:70.0%"> <img data-src="images/genentech-logo.png" style="width:50.0%"></p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="center">
+<p><strong>Mark Baillie</strong></p>
+<p><img data-src="images/mark-circle.png" style="width:70.0%"></p>
+<p><img data-src="images/novartis-logo.png" style="width:50.0%"></p>
+</div>
+</div>
+</div>
+</section></section>
 <section id="outline" class="title-slide slide level1 center">
 <h1>Outline</h1>
 <div class="larger2">
@@ -423,7 +446,7 @@ Daniel D. Sjoberg &amp; Mark Baillie
 <p>Examples use a labeled version of the <code>survival::colon</code> data set.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-2_7d3e0e5413be394ee5324ef5ce3c710e">
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-3_52af3ff2c2ec74f15b67c4bbe7ff4781">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(ggsurvfit)</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(gtsummary)</span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(tidyverse)</span>
@@ -448,28 +471,28 @@ Daniel D. Sjoberg &amp; Mark Baillie
 </div>
 </div>
 </div><div class="column" style="width:50%;">
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-3_3be9e7523b9351f4c7568d7a623a9c1a">
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-4_7dedb388717b2c086188afe889fa1946">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>df_colon <span class="sc">|&gt;</span> </span>
 <span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">tbl_summary</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="klyistrvvp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#klyistrvvp table {
+<div id="ovhxywfisa" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ovhxywfisa table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#klyistrvvp thead, #klyistrvvp tbody, #klyistrvvp tfoot, #klyistrvvp tr, #klyistrvvp td, #klyistrvvp th {
+#ovhxywfisa thead, #ovhxywfisa tbody, #ovhxywfisa tfoot, #ovhxywfisa tr, #ovhxywfisa td, #ovhxywfisa th {
   border-style: none;
 }
 
-#klyistrvvp p {
+#ovhxywfisa p {
   margin: 0;
   padding: 0;
 }
 
-#klyistrvvp .gt_table {
+#ovhxywfisa .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -495,12 +518,12 @@ Daniel D. Sjoberg &amp; Mark Baillie
   border-left-color: #D3D3D3;
 }
 
-#klyistrvvp .gt_caption {
+#ovhxywfisa .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#klyistrvvp .gt_title {
+#ovhxywfisa .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -512,7 +535,7 @@ Daniel D. Sjoberg &amp; Mark Baillie
   border-bottom-width: 0;
 }
 
-#klyistrvvp .gt_subtitle {
+#ovhxywfisa .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -524,7 +547,7 @@ Daniel D. Sjoberg &amp; Mark Baillie
   border-top-width: 0;
 }
 
-#klyistrvvp .gt_heading {
+#ovhxywfisa .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -536,13 +559,13 @@ Daniel D. Sjoberg &amp; Mark Baillie
   border-right-color: #D3D3D3;
 }
 
-#klyistrvvp .gt_bottom_border {
+#ovhxywfisa .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#klyistrvvp .gt_col_headings {
+#ovhxywfisa .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -557,7 +580,7 @@ Daniel D. Sjoberg &amp; Mark Baillie
   border-right-color: #D3D3D3;
 }
 
-#klyistrvvp .gt_col_heading {
+#ovhxywfisa .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -577,7 +600,7 @@ Daniel D. Sjoberg &amp; Mark Baillie
   overflow-x: hidden;
 }
 
-#klyistrvvp .gt_column_spanner_outer {
+#ovhxywfisa .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -589,15 +612,15 @@ Daniel D. Sjoberg &amp; Mark Baillie
   padding-right: 4px;
 }
 
-#klyistrvvp .gt_column_spanner_outer:first-child {
+#ovhxywfisa .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#klyistrvvp .gt_column_spanner_outer:last-child {
+#ovhxywfisa .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#klyistrvvp .gt_column_spanner {
+#ovhxywfisa .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -609,11 +632,11 @@ Daniel D. Sjoberg &amp; Mark Baillie
   width: 100%;
 }
 
-#klyistrvvp .gt_spanner_row {
+#ovhxywfisa .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#klyistrvvp .gt_group_heading {
+#ovhxywfisa .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -639,7 +662,7 @@ Daniel D. Sjoberg &amp; Mark Baillie
   text-align: left;
 }
 
-#klyistrvvp .gt_empty_group_heading {
+#ovhxywfisa .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -654,15 +677,15 @@ Daniel D. Sjoberg &amp; Mark Baillie
   vertical-align: middle;
 }
 
-#klyistrvvp .gt_from_md > :first-child {
+#ovhxywfisa .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#klyistrvvp .gt_from_md > :last-child {
+#ovhxywfisa .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#klyistrvvp .gt_row {
+#ovhxywfisa .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -681,7 +704,7 @@ Daniel D. Sjoberg &amp; Mark Baillie
   overflow-x: hidden;
 }
 
-#klyistrvvp .gt_stub {
+#ovhxywfisa .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -694,7 +717,7 @@ Daniel D. Sjoberg &amp; Mark Baillie
   padding-right: 5px;
 }
 
-#klyistrvvp .gt_stub_row_group {
+#ovhxywfisa .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -708,15 +731,15 @@ Daniel D. Sjoberg &amp; Mark Baillie
   vertical-align: top;
 }
 
-#klyistrvvp .gt_row_group_first td {
+#ovhxywfisa .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#klyistrvvp .gt_row_group_first th {
+#ovhxywfisa .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#klyistrvvp .gt_summary_row {
+#ovhxywfisa .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -726,16 +749,16 @@ Daniel D. Sjoberg &amp; Mark Baillie
   padding-right: 5px;
 }
 
-#klyistrvvp .gt_first_summary_row {
+#ovhxywfisa .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#klyistrvvp .gt_first_summary_row.thick {
+#ovhxywfisa .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#klyistrvvp .gt_last_summary_row {
+#ovhxywfisa .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -745,7 +768,7 @@ Daniel D. Sjoberg &amp; Mark Baillie
   border-bottom-color: #D3D3D3;
 }
 
-#klyistrvvp .gt_grand_summary_row {
+#ovhxywfisa .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -755,7 +778,7 @@ Daniel D. Sjoberg &amp; Mark Baillie
   padding-right: 5px;
 }
 
-#klyistrvvp .gt_first_grand_summary_row {
+#ovhxywfisa .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -765,7 +788,7 @@ Daniel D. Sjoberg &amp; Mark Baillie
   border-top-color: #D3D3D3;
 }
 
-#klyistrvvp .gt_last_grand_summary_row_top {
+#ovhxywfisa .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -775,11 +798,11 @@ Daniel D. Sjoberg &amp; Mark Baillie
   border-bottom-color: #D3D3D3;
 }
 
-#klyistrvvp .gt_striped {
+#ovhxywfisa .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#klyistrvvp .gt_table_body {
+#ovhxywfisa .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -788,7 +811,7 @@ Daniel D. Sjoberg &amp; Mark Baillie
   border-bottom-color: #D3D3D3;
 }
 
-#klyistrvvp .gt_footnotes {
+#ovhxywfisa .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -802,7 +825,7 @@ Daniel D. Sjoberg &amp; Mark Baillie
   border-right-color: #D3D3D3;
 }
 
-#klyistrvvp .gt_footnote {
+#ovhxywfisa .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -811,7 +834,7 @@ Daniel D. Sjoberg &amp; Mark Baillie
   padding-right: 5px;
 }
 
-#klyistrvvp .gt_sourcenotes {
+#ovhxywfisa .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -825,7 +848,7 @@ Daniel D. Sjoberg &amp; Mark Baillie
   border-right-color: #D3D3D3;
 }
 
-#klyistrvvp .gt_sourcenote {
+#ovhxywfisa .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -833,63 +856,63 @@ Daniel D. Sjoberg &amp; Mark Baillie
   padding-right: 5px;
 }
 
-#klyistrvvp .gt_left {
+#ovhxywfisa .gt_left {
   text-align: left;
 }
 
-#klyistrvvp .gt_center {
+#ovhxywfisa .gt_center {
   text-align: center;
 }
 
-#klyistrvvp .gt_right {
+#ovhxywfisa .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#klyistrvvp .gt_font_normal {
+#ovhxywfisa .gt_font_normal {
   font-weight: normal;
 }
 
-#klyistrvvp .gt_font_bold {
+#ovhxywfisa .gt_font_bold {
   font-weight: bold;
 }
 
-#klyistrvvp .gt_font_italic {
+#ovhxywfisa .gt_font_italic {
   font-style: italic;
 }
 
-#klyistrvvp .gt_super {
+#ovhxywfisa .gt_super {
   font-size: 65%;
 }
 
-#klyistrvvp .gt_footnote_marks {
+#ovhxywfisa .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#klyistrvvp .gt_asterisk {
+#ovhxywfisa .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#klyistrvvp .gt_indent_1 {
+#ovhxywfisa .gt_indent_1 {
   text-indent: 5px;
 }
 
-#klyistrvvp .gt_indent_2 {
+#ovhxywfisa .gt_indent_2 {
   text-indent: 10px;
 }
 
-#klyistrvvp .gt_indent_3 {
+#ovhxywfisa .gt_indent_3 {
   text-indent: 15px;
 }
 
-#klyistrvvp .gt_indent_4 {
+#ovhxywfisa .gt_indent_4 {
   text-indent: 20px;
 }
 
-#klyistrvvp .gt_indent_5 {
+#ovhxywfisa .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -931,12 +954,12 @@ Daniel D. Sjoberg &amp; Mark Baillie
 <h1>Basic Example</h1>
 <div class="columns">
 <div class="column" style="width:80%;">
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-4_6d62e8512834312afd1ba9ebe9fcfc16">
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-5_36710f760ee7977abb72acca0e37e3a4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">survfit2</span>(<span class="fu">Surv</span>(time, status) <span class="sc">~</span> surg, <span class="at">data =</span> df_colon) <span class="sc">|&gt;</span> </span>
 <span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">ggsurvfit</span>() <span class="sc">+</span></span>
 <span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">add_risktable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-5-1.png" width="960"></p>
 </div>
 </div>
 </div><div class="column" style="width:20%;">
@@ -965,14 +988,14 @@ Daniel D. Sjoberg &amp; Mark Baillie
 
 <section id="basic-example-1" class="title-slide slide level1 center">
 <h1>Basic Example</h1>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-5_d12ce1ddff7012501d1286a5eb3c8001">
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-6_9410b3f04d27e342faf509164f996daf">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">survfit2</span>(<span class="fu">Surv</span>(time, status) <span class="sc">~</span> surg, <span class="at">data =</span> df_colon) <span class="sc">|&gt;</span> </span>
 <span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">ggsurvfit</span>() <span class="sc">+</span></span>
 <span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">add_risktable</span>() <span class="sc">+</span></span>
 <span id="cb5-4"><a href="#cb5-4"></a>  <span class="fu">scale_ggsurvfit</span>() <span class="sc">+</span></span>
 <span id="cb5-5"><a href="#cb5-5"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Recurrence-free Probability"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-5-1.png" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-6-1.png" width="960"></p>
 </div>
 </div>
 
@@ -1206,10 +1229,10 @@ Daniel D. Sjoberg &amp; Mark Baillie
           event.initEvent("slideenter", true, true);
           window.document.dispatchEvent(event);
         }
-    
+
         function fireSlideChanged(previousSlide, currentSlide) {
           fireSlideEnter();
-    
+
           // dispatch for shiny
           if (window.jQuery) {
             if (previousSlide) {
@@ -1220,7 +1243,7 @@ Daniel D. Sjoberg &amp; Mark Baillie
             }
           }
         }
-    
+
         // hookup for slidy
         if (window.w3c_slidy) {
           window.w3c_slidy.add_observer(function (slide_num) {
@@ -1228,10 +1251,10 @@ Daniel D. Sjoberg &amp; Mark Baillie
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
           });
         }
-    
+
       })();
     </script>
-    
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
