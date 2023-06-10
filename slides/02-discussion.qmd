@@ -82,7 +82,7 @@ Proposed **patchwork**
 ::: {.column width="80%"}
 
 ```r
-if (should_autowrap(e2)) e2 <- wrap_elements(full = e2) ...
+if (should_autowrap(e2)) e2 <- wrap_elements(full = e2) 
 
 should_autowrap <- function(x) {
     is.grob(x) || inherits(x, 'formula') || is.raster(x) || inherits(x, 'nativeRaster')
