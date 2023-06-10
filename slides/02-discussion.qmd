@@ -6,9 +6,9 @@
 
 * **Discussion for ggplot2-extenders**
 
-    - Structure of {ggsurvfit} functions
-
     - Side-by-side plots with {patchwork}
+
+    - Structure of {ggsurvfit} functions
     
 :::
 
@@ -49,6 +49,12 @@ p2 <-
 #| fig-height: 3
 p2
 ```
+
+::: {.notes}
+The risk tables are not built until print or running `ggsurvfit_build()`
+
+Then you have to wrap the 
+:::
 
 # Side-by-Side
 
