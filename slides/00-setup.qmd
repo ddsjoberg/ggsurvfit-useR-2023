@@ -31,7 +31,7 @@ This work is licensed under [Creative Commons Zero v1.0 Universal](https://creat
 ::: {.center}
 **Mark Baillie**
 
-![](images/mark-circle.png){width="70%"}
+![](images/mark.png){width="70%"}
 
 ![](images/novartis-logo.png){width="50%"}
 :::
