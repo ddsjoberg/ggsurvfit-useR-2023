@@ -1,0 +1,156 @@
+# Outline
+
+::: {.larger2}
+
+* **Overview of package functionality**
+
+* Discussion for ggplot2-extenders 
+
+:::
+
+# Data
+
+Examples use a labeled version of the `survival::colon` data set.
+
+```{r}
+#| echo: false
+list(`as_gt-lst:addl_cmds` = list(tab_spanner = rlang::expr(gt::tab_options(table.font.size = 22)))) |> 
+  gtsummary::set_gtsummary_theme()
+```
+
+::: columns
+::: {.column width="50%"}
+```{r}
+library(ggsurvfit)
+library(gtsummary)
+library(tidyverse)
+
+df_colon <- df_colon |> select(time, status, surg)
+df_colon
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| freeze: false
+df_colon |> 
+  tbl_summary()
+```
+:::
+:::
+
+# Basic Example
+
+::: columns
+::: {.column width="80%"}
+
+```{r}
+survfit2(Surv(time, status) ~ surg, data = df_colon) |> 
+  ggsurvfit() +
+  add_risktable()
+```
+
+:::
+::: {.column width="20%"}
+::: {.smaller}
+::: {.incremental}
+
+* The Good
+  - Simple code and figure is nearly publishable
+  - Risk table with both no. at risk and events easily added
+  - x-axis label taken from the `time` column label
+  - Can use **ggplot2** `+` notation
+
+  
+* The Could-Be-Better
+  - y-axis label is incorrect, and the range of axis is best at 0-100%
+  - Axis padding a bit more than I prefer for a Kaplan-Meier figure
+  - x-axis typically has more tick marks for Kaplan-Meier figure
+
+:::
+:::
+:::
+:::
+
+# Basic Example
+
+::: columns
+::: {.column width="80%"}
+```{r}
+#| code-line-numbers: "4-5"
+survfit2(Surv(time, status) ~ surg, data = df_colon) |> 
+  ggsurvfit() +
+  add_risktable() +
+  scale_ggsurvfit() +
+  labs(y = "Recurrence-free Progression")
+```
+
+:::
+::: {.column width="20%"}
+::: {.smaller}
+::: {.incremental}
+
+* Padding has been reduced and curves begin in the upper left corner of plot
+
+* x-axis reports additional time points (and as a result, the risk table as well)
+
+* We updated the y-axis label weaving standard **ggplot2** functions
+
+:::
+:::
+:::
+:::
+
+
+# Basic Example
+
+::: columns
+::: {.column width="80%"}
+```{r}
+#| code-line-numbers: "6"
+survfit2(Surv(time, status) ~ surg, data = df_colon) |> 
+  ggsurvfit() +
+  add_risktable() +
+  scale_ggsurvfit() +
+  labs(y = "Recurrence-free Progression") +
+  ggeasy::easy_move_legend("top")
+```
+
+:::
+::: {.column width="20%"}
+::: {.smaller}
+
+* Padding has been reduced and curves begin in the upper left corner of plot
+
+* x-axis reports additional time points (and as a result, the risk table as well)
+
+* We updated the y-axis label weaving standard **ggplot2** functions
+
+* We can even use ggplot2-extender functions
+
+:::
+:::
+:::
+
+
+# Another Example
+
+```{r}
+#| output-location: slide
+#| code-line-numbers: "|2|3|4-5|6|7|8|10-12"
+survfit2(Surv(time, status) ~ surg, data = df_colon) |>
+  ggsurvfit(type = "risk", linewidth = 1.2) +
+  add_confidence_interval() +
+  add_risktable(risktable_stats = "n.risk") +
+  add_risktable_strata_symbol(symbol = "\U25CF", size = 17) +
+  add_quantile(x_value = 5, linetype = "dotted", linewidth = 0.8) +
+  add_censor_mark(size = 2, alpha = 0.2) +
+  add_pvalue(caption = "Log-rank {p.value}") +
+  scale_ggsurvfit() +
+  scale_color_manual(values = c('#54738E', '#82AC7C')) +
+  scale_fill_manual(values = c('#54738E', '#82AC7C')) +
+  labs(y = "Risk of Recurrence")
+```
+
+
+
