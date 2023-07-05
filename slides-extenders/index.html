@@ -1083,15 +1083,16 @@ Daniel D. Sjoberg &amp; Mark Baillie
 <h1>Side-by-Side</h1>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-9_9e9a843ba29de594043720b18b4779fd">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">library</span>(patchwork)</span>
-<span id="cb8-2"><a href="#cb8-2"></a></span>
-<span id="cb8-3"><a href="#cb8-3"></a>p <span class="ot">&lt;-</span></span>
-<span id="cb8-4"><a href="#cb8-4"></a>  <span class="fu">survfit2</span>(<span class="fu">Surv</span>(time, status) <span class="sc">~</span> <span class="dv">1</span>, df_colon) <span class="sc">|&gt;</span> </span>
-<span id="cb8-5"><a href="#cb8-5"></a>  <span class="fu">ggsurvfit</span>() <span class="sc">+</span></span>
-<span id="cb8-6"><a href="#cb8-6"></a>  <span class="fu">add_confidence_interval</span>() <span class="sc">+</span></span>
-<span id="cb8-7"><a href="#cb8-7"></a>  <span class="fu">add_risktable</span>() <span class="sc">+</span></span>
-<span id="cb8-8"><a href="#cb8-8"></a>  <span class="fu">scale_ggsurvfit</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-9_2d36fce3afc9c9a4cc2c83c2f2163088">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">library</span>(ggsurvfit)</span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb8-3"><a href="#cb8-3"></a></span>
+<span id="cb8-4"><a href="#cb8-4"></a>p <span class="ot">&lt;-</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a>  <span class="fu">survfit2</span>(<span class="fu">Surv</span>(time, status) <span class="sc">~</span> <span class="dv">1</span>, df_colon) <span class="sc">|&gt;</span> </span>
+<span id="cb8-6"><a href="#cb8-6"></a>  <span class="fu">ggsurvfit</span>() <span class="sc">+</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a>  <span class="fu">add_confidence_interval</span>() <span class="sc">+</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a>  <span class="fu">add_risktable</span>() <span class="sc">+</span></span>
+<span id="cb8-9"><a href="#cb8-9"></a>  <span class="fu">scale_ggsurvfit</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-10_87b6d9f21c5a4d0e5c9184357f05bc09">
