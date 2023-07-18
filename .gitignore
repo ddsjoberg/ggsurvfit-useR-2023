@@ -3,7 +3,6 @@
 .RData
 .Ruserdata
 
-slides-extenders
 /.quarto/
 /docs/
 .DS_Store
