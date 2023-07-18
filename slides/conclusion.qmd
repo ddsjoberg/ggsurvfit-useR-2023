@@ -1,4 +1,4 @@
-## {ggsurvfit} wrap up
+# {ggsurvfit} wrap up
 
 * Ease the creation of time-to-event summary figures with ggplot2
 

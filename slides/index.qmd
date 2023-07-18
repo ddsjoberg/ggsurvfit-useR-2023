@@ -29,6 +29,8 @@ cache: true
 
 {{< include ggsurvfit-examples.qmd >}}
 
+{{< include KMunicate.qmd >}}
+
 {{< include 03-cdisc.qmd >}}
 
 {{< include conclusion.qmd >}}
