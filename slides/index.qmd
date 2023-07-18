@@ -21,5 +21,15 @@ cache: true
 
 {{< include 01-overview.qmd >}}
 
-{{< include 02-discussion.qmd >}}
+{{< include why-ggsurvfit.qmd >}}
+
+{{< include example-data.qmd >}}
+
+{{< include basic-example.qmd >}}
+
+{{< include ggsurvfit-examples.qmd >}}
+
+{{< include 03-cdisc.qmd >}}
+
+{{< include conclusion.qmd >}}
 

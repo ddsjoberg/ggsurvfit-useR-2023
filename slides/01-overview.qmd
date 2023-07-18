@@ -1,156 +1,64 @@
 # Outline
 
-::: {.larger2}
+A whistle stop tour of {ggsurvfit}
+
+* Motivation 
+
+* Why ggsurvfit? 
 
 * **Overview of package functionality**
 
-* Discussion for ggplot2-extenders 
+* Examples 
+
+
+# Motivation 
+
+## A widely used statistical summary 
+
+::: {.smaller}
+
+Time-to-event (a.k.a Survival or Kaplan-Meier) summaries are commonplace, from oncology to cardiovascular. 
+
+However, it was not such a simple start:
+
+John Tukey insisted Edward L. Kaplan and Paul Meier combine their efforts after submitting independent papers to JASA, which took 4 more years for the authors of the “KM” estimator to publish
+
+Afterwards “Paul Meier himself is said to have spoken with bemusement about people plotting KM estimates over time and was not convinced he actually liked it” [Morris et al, 2018]( https://bmjopen.bmj.com/content/9/9/e030215)
 
 :::
 
-# Data
-
-Examples use a labeled version of the `survival::colon` data set.
-
 ```{r}
-#| echo: false
-list(`as_gt-lst:addl_cmds` = list(tab_spanner = rlang::expr(gt::tab_options(table.font.size = 22)))) |> 
-  gtsummary::set_gtsummary_theme()
+library(survival)
+fit <- survfit(Surv(time, status) ~ surg, data = df_colon) 
+plot(fit)
 ```
 
-::: columns
-::: {.column width="50%"}
+
+
+## A widely used statistical summary 
+
+::: {.smaller}
+
+KM displays the estimated cumulative proportion over time of patients who survive (or report an event)
+
+There are many design and analytical choices to be made when designing even a simple KM plot – these choices can lead to wide variation in presentation quality.
+
+:::
+
 ```{r}
 library(ggsurvfit)
-library(gtsummary)
-library(tidyverse)
-
-df_colon <- df_colon |> select(time, status, surg)
-df_colon
-```
-:::
-
-::: {.column width="50%"}
-```{r}
-#| freeze: false
-df_colon |> 
-  tbl_summary()
-```
-:::
-:::
-
-# Basic Example
-
-::: columns
-::: {.column width="80%"}
-
-```{r}
 survfit2(Surv(time, status) ~ surg, data = df_colon) |> 
-  ggsurvfit() +
-  add_risktable()
+  ggsurvfit() 
 ```
 
-:::
-::: {.column width="20%"}
-::: {.smaller}
-::: {.incremental}
+## {ggsurvfit} overview
 
-* The Good
-  - Simple code and figure is nearly publishable
-  - Risk table with both no. at risk and events easily added
-  - x-axis label taken from the `time` column label
-  - Can use **ggplot2** `+` notation
+* Ease the creation of time-to-event summary figures with ggplot2
 
-  
-* The Could-Be-Better
-  - y-axis label is incorrect, and the range of axis is best at 0-100%
-  - Axis padding a bit more than I prefer for a Kaplan-Meier figure
-  - x-axis typically has more tick marks for Kaplan-Meier figure
+* Concise and modular code 
 
-:::
-:::
-:::
-:::
+* Ready for publication or sharing figures
 
-# Basic Example
+* Sensible defaults
 
-::: columns
-::: {.column width="80%"}
-```{r}
-#| code-line-numbers: "4-5"
-survfit2(Surv(time, status) ~ surg, data = df_colon) |> 
-  ggsurvfit() +
-  add_risktable() +
-  scale_ggsurvfit() +
-  labs(y = "Recurrence-free Progression")
-```
-
-:::
-::: {.column width="20%"}
-::: {.smaller}
-::: {.incremental}
-
-* Padding has been reduced and curves begin in the upper left corner of plot
-
-* x-axis reports additional time points (and as a result, the risk table as well)
-
-* We updated the y-axis label weaving standard **ggplot2** functions
-
-:::
-:::
-:::
-:::
-
-
-# Basic Example
-
-::: columns
-::: {.column width="80%"}
-```{r}
-#| code-line-numbers: "6"
-survfit2(Surv(time, status) ~ surg, data = df_colon) |> 
-  ggsurvfit() +
-  add_risktable() +
-  scale_ggsurvfit() +
-  labs(y = "Recurrence-free Progression") +
-  ggeasy::easy_move_legend("top")
-```
-
-:::
-::: {.column width="20%"}
-::: {.smaller}
-
-* Padding has been reduced and curves begin in the upper left corner of plot
-
-* x-axis reports additional time points (and as a result, the risk table as well)
-
-* We updated the y-axis label weaving standard **ggplot2** functions
-
-* We can even use ggplot2-extender functions
-
-:::
-:::
-:::
-
-
-# Another Example
-
-```{r}
-#| output-location: slide
-#| code-line-numbers: "|2|3|4-5|6|7|8|10-12"
-survfit2(Surv(time, status) ~ surg, data = df_colon) |>
-  ggsurvfit(type = "risk", linewidth = 1.2) +
-  add_confidence_interval() +
-  add_risktable(risktable_stats = "n.risk") +
-  add_risktable_strata_symbol(symbol = "\U25CF", size = 17) +
-  add_quantile(x_value = 5, linetype = "dotted", linewidth = 0.8) +
-  add_censor_mark(size = 2, alpha = 0.2) +
-  add_pvalue(caption = "Log-rank {p.value}") +
-  scale_ggsurvfit() +
-  scale_color_manual(values = c('#54738E', '#82AC7C')) +
-  scale_fill_manual(values = c('#54738E', '#82AC7C')) +
-  labs(y = "Risk of Recurrence")
-```
-
-
-
+* Also supports competing risks cumulative incidence summaries  
