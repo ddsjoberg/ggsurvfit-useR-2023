@@ -7,6 +7,125 @@
     "text": "View slides in full screen"
   },
   {
+    "objectID": "slides/overview.html",
+    "href": "slides/overview.html",
+    "title": "A whistle stop tour of {ggsurvfit}",
+    "section": "",
+    "text": "Motivation and why {ggsurvfit} ?\nOverview of package functionality\nAdditional examples"
+  },
+  {
+    "objectID": "slides/overview.html#a-widely-used-statistical-summary",
+    "href": "slides/overview.html#a-widely-used-statistical-summary",
+    "title": "A whistle stop tour of {ggsurvfit}",
+    "section": "A widely used statistical summary",
+    "text": "A widely used statistical summary\n\nTime-to-event (a.k.a Survival or Kaplan-Meier) summaries are commonplace, from oncology to cardiovascular.\nKM displays the estimated cumulative proportion over time of patients who survive (or report an event)\nHowever, it was not such a simple start:\nJohn Tukey insisted Edward L. Kaplan and Paul Meier combine their efforts after submitting independent papers to JASA, which took 4 more years for the authors of the “KM” estimator to publish\nAfterwards “Paul Meier himself is said to have spoken with bemusement about people plotting KM estimates over time and was not convinced he actually liked it” Morris et al, 2018\n\n\nlibrary(survival)\nfit &lt;- survfit(Surv(time, status) ~ surg, data = df_colon) \nplot(fit)"
+  },
+  {
+    "objectID": "slides/overview.html#can-we-do-better",
+    "href": "slides/overview.html#can-we-do-better",
+    "title": "A whistle stop tour of {ggsurvfit}",
+    "section": "Can we do better?",
+    "text": "Can we do better?\n\nThere are many design and analytical choices to be made when designing even a simple KM plot – these choices can lead to wide variation in presentation quality.\n\n\nlibrary(ggsurvfit)\nfit2 &lt;- survfit2(Surv(time, status) ~ surg, data = df_colon) \nggsurvfit(fit2)"
+  },
+  {
+    "objectID": "slides/overview.html#ggsurvfit-overview",
+    "href": "slides/overview.html#ggsurvfit-overview",
+    "title": "A whistle stop tour of {ggsurvfit}",
+    "section": "{ggsurvfit} overview",
+    "text": "{ggsurvfit} overview\n\nEase the creation of time-to-event summary figures with ggplot2\nConcise and modular code\nReady for publication or sharing figures\nSensible defaults\nSupports CDISC data model\nAlso supports competing risks cumulative incidence summaries"
+  },
+  {
+    "objectID": "slides/ggsurvfit-examples.html#ggsurvfit-defaults",
+    "href": "slides/ggsurvfit-examples.html#ggsurvfit-defaults",
+    "title": "Additional examples",
+    "section": "{ggsurvfit} defaults",
+    "text": "{ggsurvfit} defaults\n\ngg_default &lt;-\n  survfit2(Surv(time, status) ~ surg, data = df_colon) |&gt;\n  ggsurvfit() +\n  add_confidence_interval() +\n  labs(title = \"Default\")\n\ngg_default"
+  },
+  {
+    "objectID": "slides/ggsurvfit-examples.html#ggplot2-styled",
+    "href": "slides/ggsurvfit-examples.html#ggplot2-styled",
+    "title": "Additional examples",
+    "section": "{ggplot2} styled",
+    "text": "{ggplot2} styled\n\ngg_styled &lt;-\n  gg_default +\n  coord_cartesian(xlim = c(0, 8)) +\n  scale_y_continuous(\n    limits = c(0, 1),\n    labels = scales::percent, \n    expand = c(0.01, 0)\n  ) +\n  scale_x_continuous(breaks = 0:9, expand = c(0.02, 0)) +\n  scale_color_manual(values = c('#54738E', '#82AC7C')) +\n  scale_fill_manual(values = c('#54738E', '#82AC7C')) +\n  theme_minimal() +\n  theme(legend.position = \"bottom\") +\n  guides(color = guide_legend(ncol = 1)) +\n  labs(\n    title = \"{ggplot2} styled\",\n    y = \"Percentage Survival\"\n  )\n\ngg_styled"
+  },
+  {
+    "objectID": "slides/ggsurvfit-examples.html#side-by-side",
+    "href": "slides/ggsurvfit-examples.html#side-by-side",
+    "title": "Additional examples",
+    "section": "Side-by-side",
+    "text": "Side-by-side\n\nlibrary(patchwork)\ngg_default + gg_styled"
+  },
+  {
+    "objectID": "slides/ggsurvfit-examples.html#ggsurvfit-defaults-1",
+    "href": "slides/ggsurvfit-examples.html#ggsurvfit-defaults-1",
+    "title": "Additional examples",
+    "section": "{ggsurvfit} defaults",
+    "text": "{ggsurvfit} defaults\n\nsurvfit2(Surv(time, status) ~ surg, data = df_colon) |&gt;\n  ggsurvfit() +\n  add_risktable()"
+  },
+  {
+    "objectID": "slides/ggsurvfit-examples.html#group-by-statistic-or-strata",
+    "href": "slides/ggsurvfit-examples.html#group-by-statistic-or-strata",
+    "title": "Additional examples",
+    "section": "Group by statistic or strata",
+    "text": "Group by statistic or strata\n\nggrisktable &lt;-\n  survfit2(Surv(time, status) ~ surg, data = df_colon) |&gt;\n  ggsurvfit() +\n  scale_ggsurvfit() +\n  add_risktable(risktable_group = \"risktable_stats\") \nggrisktable"
+  },
+  {
+    "objectID": "slides/ggsurvfit-examples.html#colour-encoding-strata",
+    "href": "slides/ggsurvfit-examples.html#colour-encoding-strata",
+    "title": "Additional examples",
+    "section": "Colour encoding strata",
+    "text": "Colour encoding strata\n\nggrisktable +\n  add_risktable_strata_symbol(symbol = \"\\U25CF\", size = 10)"
+  },
+  {
+    "objectID": "slides/ggsurvfit-examples.html#customizing-the-risktable-statistics",
+    "href": "slides/ggsurvfit-examples.html#customizing-the-risktable-statistics",
+    "title": "Additional examples",
+    "section": "Customizing the risktable statistics",
+    "text": "Customizing the risktable statistics\n\nsurvfit2(Surv(time, status) ~ surg, data = df_colon) |&gt;\n  ggsurvfit() +\n  add_risktable(risktable_stats = \"{n.risk} ({cum.event})\")"
+  },
+  {
+    "objectID": "slides/ggsurvfit-examples.html#median-summary",
+    "href": "slides/ggsurvfit-examples.html#median-summary",
+    "title": "Additional examples",
+    "section": "Median summary",
+    "text": "Median summary\n\nsurvfit2(Surv(time, status) ~ surg, data = df_colon) |&gt;\n  ggsurvfit(linewidth = 0.8) +\n  add_quantile(y_value = 0.5) +\n  scale_ggsurvfit()"
+  },
+  {
+    "objectID": "slides/ggsurvfit-examples.html#at-a-given-timepoint",
+    "href": "slides/ggsurvfit-examples.html#at-a-given-timepoint",
+    "title": "Additional examples",
+    "section": "At a given timepoint",
+    "text": "At a given timepoint\n\nsurvfit2(Surv(time, status) ~ surg, data = df_colon) |&gt;\n  ggsurvfit(linewidth = 0.8) +\n  add_quantile(x_value = 5, linetype = \"solid\", \n               linewidth = 1.0, alpha = 0.3) +\n  scale_ggsurvfit()"
+  },
+  {
+    "objectID": "slides/example-data.html",
+    "href": "slides/example-data.html",
+    "title": "Data",
+    "section": "",
+    "text": "The following examples use a labeled version of the survival::colon data set.\n\n\n\nlibrary(ggsurvfit)\n\nLoading required package: ggplot2\n\nlibrary(gtsummary)\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ lubridate 1.9.2     ✔ tibble    3.2.1\n✔ purrr     1.0.1     ✔ tidyr     1.3.0\n\n\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\ndf_colon &lt;- df_colon |&gt; select(time, status, surg)\ndf_colon\n\n# A tibble: 929 × 3\n    time status surg                       \n   &lt;dbl&gt;  &lt;dbl&gt; &lt;fct&gt;                      \n 1 2.65       1 Limited Time Since Surgery \n 2 8.45       0 Limited Time Since Surgery \n 3 1.48       1 Limited Time Since Surgery \n 4 0.671      1 Extended Time Since Surgery\n 5 1.43       1 Extended Time Since Surgery\n 6 2.48       1 Limited Time Since Surgery \n 7 0.627      1 Extended Time Since Surgery\n 8 8.74       0 Limited Time Since Surgery \n 9 8.69       0 Limited Time Since Surgery \n10 9.06       0 Extended Time Since Surgery\n# ℹ 919 more rows\n\n\n\n\n\n\ndf_colon |&gt; \n  tbl_summary()\n\n\n\n\n\n  \n    \n    \n      Characteristic\n      N = 9291\n    \n  \n  \n    Follow-up time, years\n4.24 (1.01, 6.27)\n    Recurrence Status\n468 (50%)\n    Time from Surgery to Treatment\n\n        Limited Time Since Surgery\n682 (73%)\n        Extended Time Since Surgery\n247 (27%)\n  \n  \n  \n    \n      1 Median (IQR); n (%)"
+  },
+  {
+    "objectID": "slides/example-data.html#data-1",
+    "href": "slides/example-data.html#data-1",
+    "title": "Data",
+    "section": "",
+    "text": "library(ggsurvfit)\n\nLoading required package: ggplot2\n\nlibrary(gtsummary)\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ lubridate 1.9.2     ✔ tibble    3.2.1\n✔ purrr     1.0.1     ✔ tidyr     1.3.0\n\n\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\ndf_colon &lt;- df_colon |&gt; select(time, status, surg)\ndf_colon\n\n# A tibble: 929 × 3\n    time status surg                       \n   &lt;dbl&gt;  &lt;dbl&gt; &lt;fct&gt;                      \n 1 2.65       1 Limited Time Since Surgery \n 2 8.45       0 Limited Time Since Surgery \n 3 1.48       1 Limited Time Since Surgery \n 4 0.671      1 Extended Time Since Surgery\n 5 1.43       1 Extended Time Since Surgery\n 6 2.48       1 Limited Time Since Surgery \n 7 0.627      1 Extended Time Since Surgery\n 8 8.74       0 Limited Time Since Surgery \n 9 8.69       0 Limited Time Since Surgery \n10 9.06       0 Extended Time Since Surgery\n# ℹ 919 more rows"
+  },
+  {
+    "objectID": "slides/example-data.html#data-2",
+    "href": "slides/example-data.html#data-2",
+    "title": "Data",
+    "section": "",
+    "text": "df_colon |&gt; \n  tbl_summary()\n\n\n\n\n\n  \n    \n    \n      Characteristic\n      N = 9291\n    \n  \n  \n    Follow-up time, years\n4.24 (1.01, 6.27)\n    Recurrence Status\n468 (50%)\n    Time from Surgery to Treatment\n\n        Limited Time Since Surgery\n682 (73%)\n        Extended Time Since Surgery\n247 (27%)\n  \n  \n  \n    \n      1 Median (IQR); n (%)"
+  },
+  {
+    "objectID": "slides/basic-example.html",
+    "href": "slides/basic-example.html",
+    "title": "Basic Example",
+    "section": "",
+    "text": "Basic Example\n\n\n\nsurvfit2(Surv(time, status) ~ surg, data = df_colon) |&gt; \n  ggsurvfit() +\n  add_risktable()\n\n\n\n\n\n\n\n\nThe Good\n\nSimple code and figure is nearly publishable\nRisk table with both no. at risk and events easily added\nx-axis label taken from the time column label\nCan use ggplot2 + notation\n\nThe Could-Be-Better\n\ny-axis label is incorrect, and the range of axis is best at 0-100%\nAxis padding a bit more than I prefer for a KM figure\nx-axis typically has more tick marks for KM figure\n\n\n\n\n\n\n\n\nBasic Example\n\n\n\nsurvfit2(Surv(time, status) ~ surg, data = df_colon) |&gt; \n  ggsurvfit() +\n  add_risktable() +\n  scale_ggsurvfit() +\n  labs(y = \"Recurrence-free Progression\")\n\n\n\n\n\n\n\n\nPadding has been reduced and curves begin in the upper left corner of plot\nx-axis reports additional time points (and as a result, the risk table as well)\nWe updated the y-axis label weaving standard ggplot2 functions\n\n\n\n\n\n\n\nBasic Example\n\n\n\nsurvfit2(Surv(time, status) ~ surg, data = df_colon) |&gt; \n  ggsurvfit() +\n  add_risktable() +\n  scale_ggsurvfit() +\n  labs(y = \"Recurrence-free Progression\") +\n  ggeasy::easy_move_legend(\"top\")\n\n\n\n\n\n\n\nPadding has been reduced and curves begin in the upper left corner of plot\nx-axis reports additional time points (and as a result, the risk table as well)\nWe updated the y-axis label weaving standard ggplot2 functions\nWe can even use ggplot2-extender functions"
+  },
+  {
     "objectID": "slides-extenders/index.html#licensing",
     "href": "slides-extenders/index.html#licensing",
     "title": "Visualizing Survival Data with the {ggsurvfit} R Package",
@@ -63,6 +182,55 @@
     "text": "Outline\n\n\nOverview of package functionality\nDiscussion for ggplot2-extenders\n\nSide-by-side plots with {patchwork}\nStructure of {ggsurvfit} functions\n\n\n\n\n\nSide-by-Side\n\n\n\nlibrary(ggsurvfit)\n\nLoading required package: ggplot2\n\nlibrary(patchwork)\n\np &lt;-\n  survfit2(Surv(time, status) ~ 1, df_colon) |&gt; \n  ggsurvfit() +\n  add_confidence_interval() +\n  add_risktable() +\n  scale_ggsurvfit()\n\n\n\n# build plot (which constructs the risktable)\nbuilt_p &lt;- ggsurvfit_build(p)\n\n# wrap built plot to place side-by-side\np2 &lt;- \n  wrap_elements(built_p) | \n  wrap_elements(built_p)\n\n\n\n\n\n\n\n\n\nThe risk tables are not built until print or running ggsurvfit_build()\nThen you have to wrap the\n\n\n\nSide-by-Side\nHow can we make this easier for ggsurvfit users?\n\nIDEA 1\n\nIn patchwork, the first line the arithmetic operator is a conditional to assess if the object needs processing\nWe could make this operation an exported generic function!\nIssue submitted in Nov 2022, but no response yet. https://github.com/thomasp85/patchwork/issues/310\n\n\n\n\nSide-by-Side\n\n\nCurrent patchwork   Proposed patchwork\n\nif (should_autowrap(e2)) e2 &lt;- wrap_elements(full = e2) \n\nshould_autowrap &lt;- function(x) {\n    is.grob(x) || inherits(x, 'formula') || is.raster(x) || inherits(x, 'nativeRaster')\n  }\n\n#' @export\n#' @rdname arithmetic_prep\narithmetic_prep &lt;- function(x, ...) {\n  UseMethod(\"arithmetic_prep\")\n}\n\n#' @export\n#' @rdname arithmetic_prep\narithmetic_prep.default &lt;- function(x, ...) {\n  # wrap input plot as needed\n  if (is.grob(x) || inherits(x, 'formula') || is.raster(x) || inherits(x, 'nativeRaster')) {\n    x &lt;- wrap_elements(full = x)\n  }\n  x\n}\n\n\n\nAny tips on getting this through??\n\n\n\nSide-by-Side\n\nIDEA 2: S4 😬😬😬\n\nI reached out on Stack Overflow, but couldn’t get the S4 solution to work\nAlso, I don’t know anything about S4 🤷\nhttps://stackoverflow.com/questions/74072102\n\n\n\n\nFunction Stucture\n\nThe package’s functions work! Nice!\nI think I may have implemented it in a strange way.\nIs there better way? 🤔🤔\n\n\n\nFunction Stucture\nadd_censor_mark &lt;- function(...) {\n  add_censor_mark_empty_list &lt;- list()\n  structure(add_censor_mark_empty_list,\n            dots = utils::modifyList(x = list(na.rm = TRUE, size = 2, shape = 3),\n                                     val = rlang::dots_list(...)),\n            class = \"add_censor_mark\")\n}\n\nggplot_add.add_censor_mark &lt;- function (object, plot, object_name) {\n  update_add_censor_mark(plot, object)\n}\n\nupdate_add_censor_mark &lt;- function(p, add_censor_mark_empty_list) {\n  # getting user-passed arguments\n  dots &lt;- attr(add_censor_mark_empty_list, \"dots\")\n\n  # add censor marks with `geom_point()`\n  p +\n    rlang::inject(\n      ggplot2::geom_point(\n        data = ~ tidyr::uncount(.x, weights = .data$n.censor),\n        ggplot2::aes(!!!.construct_censor_mark_aes(p)),\n        !!!dots\n      )\n    )\n}"
   },
   {
+    "objectID": "slides/KMunicate.html",
+    "href": "slides/KMunicate.html",
+    "title": "KMunicate and themes",
+    "section": "",
+    "text": "There are many options to consider.\nThere are many guidances available, Morris et al. 2018 provide useful guidance for publication figures\nTo get figures that align with the guidelines outlined in “Proposals on Kaplan–Meier plots in medical research and a survey of stakeholder views: KMunicate.”, use the theme_ggsurvfit_KMunicate() theme along with these function options.\nA note of caution on standards.\n\nDesign for your purpose, one size does not fit all\nDesigning means you need to think carefully about your audience and aims\n\n\n\n\n\n\n\nsurvfit2(Surv(time, status) ~ surg, data = df_colon) |&gt;\n  ggsurvfit(linetype_aes = TRUE) +\n  add_confidence_interval() +\n  add_risktable(\n    risktable_stats = c(\"n.risk\", \"cum.censor\", \"cum.event\")\n  ) +\n  theme_ggsurvfit_KMunicate() +\n  scale_ggsurvfit() +\n  theme(legend.position = c(0.85, 0.85)) +\n  labs(y = \"Recurrence-free Progression\")"
+  },
+  {
+    "objectID": "slides/KMunicate.html#what-are-the-elements-of-an-effective-and-publishable-km-plot",
+    "href": "slides/KMunicate.html#what-are-the-elements-of-an-effective-and-publishable-km-plot",
+    "title": "KMunicate and themes",
+    "section": "",
+    "text": "There are many options to consider.\nThere are many guidances available, Morris et al. 2018 provide useful guidance for publication figures\nTo get figures that align with the guidelines outlined in “Proposals on Kaplan–Meier plots in medical research and a survey of stakeholder views: KMunicate.”, use the theme_ggsurvfit_KMunicate() theme along with these function options.\nA note of caution on standards.\n\nDesign for your purpose, one size does not fit all\nDesigning means you need to think carefully about your audience and aims"
+  },
+  {
+    "objectID": "slides/KMunicate.html#kmunicate",
+    "href": "slides/KMunicate.html#kmunicate",
+    "title": "KMunicate and themes",
+    "section": "",
+    "text": "survfit2(Surv(time, status) ~ surg, data = df_colon) |&gt;\n  ggsurvfit(linetype_aes = TRUE) +\n  add_confidence_interval() +\n  add_risktable(\n    risktable_stats = c(\"n.risk\", \"cum.censor\", \"cum.event\")\n  ) +\n  theme_ggsurvfit_KMunicate() +\n  scale_ggsurvfit() +\n  theme(legend.position = c(0.85, 0.85)) +\n  labs(y = \"Recurrence-free Progression\")"
+  },
+  {
+    "objectID": "slides/conclusion.html",
+    "href": "slides/conclusion.html",
+    "title": "{ggsurvfit} wrap up",
+    "section": "",
+    "text": "{ggsurvfit} wrap up\n\nEase the creation of time-to-event summary figures with ggplot2\nConcise and modular code\nReady for publication or sharing figures\nSensible defaults\nAlso supports competing risks cumulative incidence summaries"
+  },
+  {
+    "objectID": "slides/ggsurvfit-examples-backups.html",
+    "href": "slides/ggsurvfit-examples-backups.html",
+    "title": "Back-up examples",
+    "section": "",
+    "text": "Left over examples removed from main deck\n\n\nIn addition to using additional {ggplot2} functions, it is helpful to understand which underlying functions are used to create the figures.\n\n\nsurvfit2(Surv(time, status) ~ 1, data = df_colon) %&gt;%\n  ggsurvfit(color = \"#508050\") +\n  add_confidence_interval(fill = \"#508050\")"
+  },
+  {
+    "objectID": "slides/ggsurvfit-examples-backups.html#underyling-ggsurvfit-functions",
+    "href": "slides/ggsurvfit-examples-backups.html#underyling-ggsurvfit-functions",
+    "title": "Back-up examples",
+    "section": "",
+    "text": "In addition to using additional {ggplot2} functions, it is helpful to understand which underlying functions are used to create the figures.\n\n\nsurvfit2(Surv(time, status) ~ 1, data = df_colon) %&gt;%\n  ggsurvfit(color = \"#508050\") +\n  add_confidence_interval(fill = \"#508050\")"
+  },
+  {
+    "objectID": "slides/ggsurvfit-examples-backups.html#further-customization",
+    "href": "slides/ggsurvfit-examples-backups.html#further-customization",
+    "title": "Back-up examples",
+    "section": "Further customization",
+    "text": "Further customization\n\nsurvfit2(Surv(time, status) ~ surg, data = df_colon) %&gt;%\n  ggsurvfit(linewidth = 0.8) +\n  add_risktable(\n    risktable_height = 0.33,\n    size = 4, # increase font size of risk table statistics\n    theme =   # increase font size of risk table title and y-axis label\n      list(\n        theme_risktable_default(axis.text.y.size = 11, \n                                plot.title.size = 11),\n        theme(plot.title = element_text(face = \"bold\"))\n      )\n  )"
+  },
+  {
     "objectID": "slides/index.html#licensing",
     "href": "slides/index.html#licensing",
     "title": "Visualizing Survival Data with the {ggsurvfit} R Package",
@@ -75,5 +243,152 @@
     "title": "Visualizing Survival Data with the {ggsurvfit} R Package",
     "section": "Authors",
     "text": "Authors\n\n\n\nDaniel D. Sjoberg\n \n\n\n\nMark Baillie"
+  },
+  {
+    "objectID": "slides/index.html#a-widely-used-statistical-summary",
+    "href": "slides/index.html#a-widely-used-statistical-summary",
+    "title": "Visualizing Survival Data with the {ggsurvfit} R Package",
+    "section": "A widely used statistical summary",
+    "text": "A widely used statistical summary\n\nTime-to-event (a.k.a Survival or Kaplan-Meier) summaries are commonplace, from oncology to cardiovascular.\nKM displays the estimated cumulative proportion over time of patients who survive (or report an event)\nHowever, it was not such a simple start:\nJohn Tukey insisted Edward L. Kaplan and Paul Meier combine their efforts after submitting independent papers to JASA, which took 4 more years for the authors of the “KM” estimator to publish\nAfterwards “Paul Meier himself is said to have spoken with bemusement about people plotting KM estimates over time and was not convinced he actually liked it” Morris et al, 2018\n\n\nlibrary(survival)\nfit &lt;- survfit(Surv(time, status) ~ surg, data = df_colon) \nplot(fit)"
+  },
+  {
+    "objectID": "slides/index.html#can-we-do-better",
+    "href": "slides/index.html#can-we-do-better",
+    "title": "Visualizing Survival Data with the {ggsurvfit} R Package",
+    "section": "Can we do better?",
+    "text": "Can we do better?\n\nThere are many design and analytical choices to be made when designing even a simple KM plot – these choices can lead to wide variation in presentation quality.\n\n\nlibrary(ggsurvfit)\nfit2 &lt;- survfit2(Surv(time, status) ~ surg, data = df_colon) \nggsurvfit(fit2)"
+  },
+  {
+    "objectID": "slides/index.html#ggsurvfit-overview",
+    "href": "slides/index.html#ggsurvfit-overview",
+    "title": "Visualizing Survival Data with the {ggsurvfit} R Package",
+    "section": "{ggsurvfit} overview",
+    "text": "{ggsurvfit} overview\n\nEase the creation of time-to-event summary figures with ggplot2\nConcise and modular code\nReady for publication or sharing figures\nSensible defaults\nSupports CDISC data model\nAlso supports competing risks cumulative incidence summaries"
+  },
+  {
+    "objectID": "slides/index.html#use-ggplot2-functions",
+    "href": "slides/index.html#use-ggplot2-functions",
+    "title": "Visualizing Survival Data with the {ggsurvfit} R Package",
+    "section": "Use ggplot2 functions",
+    "text": "Use ggplot2 functions\n\nEach ggsurvfit add-on function is written as a proper ggplot2 geom\nEnables package functions woven with ggplot2 functions seamlessly\nDon’t need to learn to style with ggsurvfit functions\nUse your ggplot2 knowledge if you want to customize\n\nLimitless customization\n\nModify x-axis scales or any other plot feature and risk table will still align with plot\n\nSimple saving and export through ggplot2::ggsave()"
+  },
+  {
+    "objectID": "slides/index.html#ready-to-publish-legends",
+    "href": "slides/index.html#ready-to-publish-legends",
+    "title": "Visualizing Survival Data with the {ggsurvfit} R Package",
+    "section": "Ready to publish legends",
+    "text": "Ready to publish legends\n\nRaw variable names do not appear in the figure\n\n\nfit &lt;- survfit2(Surv(time, status) ~ surg, data = df_colon) \nsurvminer::ggsurvplot(fit)\nggsurvfit(fit)"
+  },
+  {
+    "objectID": "slides/index.html#ggsurvfit-defaults",
+    "href": "slides/index.html#ggsurvfit-defaults",
+    "title": "Visualizing Survival Data with the {ggsurvfit} R Package",
+    "section": "{ggsurvfit} defaults",
+    "text": "{ggsurvfit} defaults\n\ngg_default &lt;-\n  survfit2(Surv(time, status) ~ surg, data = df_colon) |&gt;\n  ggsurvfit() +\n  add_confidence_interval() +\n  labs(title = \"Default\")\n\ngg_default"
+  },
+  {
+    "objectID": "slides/index.html#ggplot2-styled",
+    "href": "slides/index.html#ggplot2-styled",
+    "title": "Visualizing Survival Data with the {ggsurvfit} R Package",
+    "section": "{ggplot2} styled",
+    "text": "{ggplot2} styled\n\ngg_styled &lt;-\n  gg_default +\n  coord_cartesian(xlim = c(0, 8)) +\n  scale_y_continuous(\n    limits = c(0, 1),\n    labels = scales::percent, \n    expand = c(0.01, 0)\n  ) +\n  scale_x_continuous(breaks = 0:9, expand = c(0.02, 0)) +\n  scale_color_manual(values = c('#54738E', '#82AC7C')) +\n  scale_fill_manual(values = c('#54738E', '#82AC7C')) +\n  theme_minimal() +\n  theme(legend.position = \"bottom\") +\n  guides(color = guide_legend(ncol = 1)) +\n  labs(\n    title = \"{ggplot2} styled\",\n    y = \"Percentage Survival\"\n  )\n\ngg_styled"
+  },
+  {
+    "objectID": "slides/index.html#ggplot2-styled-output",
+    "href": "slides/index.html#ggplot2-styled-output",
+    "title": "Visualizing Survival Data with the {ggsurvfit} R Package",
+    "section": "{ggplot2} styled",
+    "text": "{ggplot2} styled"
+  },
+  {
+    "objectID": "slides/index.html#side-by-side",
+    "href": "slides/index.html#side-by-side",
+    "title": "Visualizing Survival Data with the {ggsurvfit} R Package",
+    "section": "Side-by-side",
+    "text": "Side-by-side\n\nlibrary(patchwork)\ngg_default + gg_styled"
+  },
+  {
+    "objectID": "slides/index.html#ggsurvfit-defaults-1",
+    "href": "slides/index.html#ggsurvfit-defaults-1",
+    "title": "Visualizing Survival Data with the {ggsurvfit} R Package",
+    "section": "{ggsurvfit} defaults",
+    "text": "{ggsurvfit} defaults\n\nsurvfit2(Surv(time, status) ~ surg, data = df_colon) |&gt;\n  ggsurvfit() +\n  add_risktable()"
+  },
+  {
+    "objectID": "slides/index.html#group-by-statistic-or-strata",
+    "href": "slides/index.html#group-by-statistic-or-strata",
+    "title": "Visualizing Survival Data with the {ggsurvfit} R Package",
+    "section": "Group by statistic or strata",
+    "text": "Group by statistic or strata\n\nggrisktable &lt;-\n  survfit2(Surv(time, status) ~ surg, data = df_colon) |&gt;\n  ggsurvfit() +\n  scale_ggsurvfit() +\n  add_risktable(risktable_group = \"risktable_stats\") \nggrisktable"
+  },
+  {
+    "objectID": "slides/index.html#colour-encoding-strata",
+    "href": "slides/index.html#colour-encoding-strata",
+    "title": "Visualizing Survival Data with the {ggsurvfit} R Package",
+    "section": "Colour encoding strata",
+    "text": "Colour encoding strata\n\nggrisktable +\n  add_risktable_strata_symbol(symbol = \"\\U25CF\", size = 10)"
+  },
+  {
+    "objectID": "slides/index.html#customizing-the-risktable-statistics",
+    "href": "slides/index.html#customizing-the-risktable-statistics",
+    "title": "Visualizing Survival Data with the {ggsurvfit} R Package",
+    "section": "Customizing the risktable statistics",
+    "text": "Customizing the risktable statistics\n\nsurvfit2(Surv(time, status) ~ surg, data = df_colon) |&gt;\n  ggsurvfit() +\n  add_risktable(risktable_stats = \"{n.risk} ({cum.event})\")"
+  },
+  {
+    "objectID": "slides/index.html#median-summary",
+    "href": "slides/index.html#median-summary",
+    "title": "Visualizing Survival Data with the {ggsurvfit} R Package",
+    "section": "Median summary",
+    "text": "Median summary\n\nsurvfit2(Surv(time, status) ~ surg, data = df_colon) |&gt;\n  ggsurvfit(linewidth = 0.8) +\n  add_quantile(y_value = 0.5) +\n  scale_ggsurvfit()"
+  },
+  {
+    "objectID": "slides/index.html#at-a-given-timepoint",
+    "href": "slides/index.html#at-a-given-timepoint",
+    "title": "Visualizing Survival Data with the {ggsurvfit} R Package",
+    "section": "At a given timepoint",
+    "text": "At a given timepoint\n\nsurvfit2(Surv(time, status) ~ surg, data = df_colon) |&gt;\n  ggsurvfit(linewidth = 0.8) +\n  add_quantile(x_value = 5, linetype = \"solid\", \n               linewidth = 1.0, alpha = 0.3) +\n  scale_ggsurvfit()"
+  },
+  {
+    "objectID": "slides/index.html#what-are-the-elements-of-an-effective-and-publishable-km-plot",
+    "href": "slides/index.html#what-are-the-elements-of-an-effective-and-publishable-km-plot",
+    "title": "Visualizing Survival Data with the {ggsurvfit} R Package",
+    "section": "What are the elements of an effective and publishable KM plot?",
+    "text": "What are the elements of an effective and publishable KM plot?\n\nThere are many options to consider.\nThere are many guidances available, Morris et al. 2018 provide useful guidance for publication figures\nTo get figures that align with the guidelines outlined in “Proposals on Kaplan–Meier plots in medical research and a survey of stakeholder views: KMunicate.”, use the theme_ggsurvfit_KMunicate() theme along with these function options.\nA note of caution on standards.\n\nDesign for your purpose, one size does not fit all\nDesigning means you need to think carefully about your audience and aims"
+  },
+  {
+    "objectID": "slides/index.html#kmunicate",
+    "href": "slides/index.html#kmunicate",
+    "title": "Visualizing Survival Data with the {ggsurvfit} R Package",
+    "section": "KMunicate",
+    "text": "KMunicate\n\nsurvfit2(Surv(time, status) ~ surg, data = df_colon) |&gt;\n  ggsurvfit(linetype_aes = TRUE) +\n  add_confidence_interval() +\n  add_risktable(\n    risktable_stats = c(\"n.risk\", \"cum.censor\", \"cum.event\")\n  ) +\n  theme_ggsurvfit_KMunicate() +\n  scale_ggsurvfit() +\n  theme(legend.position = c(0.85, 0.85)) +\n  labs(y = \"Recurrence-free Progression\")"
+  },
+  {
+    "objectID": "slides/index.html#kmunicate-output",
+    "href": "slides/index.html#kmunicate-output",
+    "title": "Visualizing Survival Data with the {ggsurvfit} R Package",
+    "section": "KMunicate",
+    "text": "KMunicate"
+  },
+  {
+    "objectID": "slides/why-ggsurvfit.html",
+    "href": "slides/why-ggsurvfit.html",
+    "title": "Why {ggsurvfit} ?",
+    "section": "",
+    "text": "Each ggsurvfit add-on function is written as a proper ggplot2 geom\nEnables package functions woven with ggplot2 functions seamlessly\nDon’t need to learn to style with ggsurvfit functions\nUse your ggplot2 knowledge if you want to customize\n\nLimitless customization\n\nModify x-axis scales or any other plot feature and risk table will still align with plot\n\nSimple saving and export through ggplot2::ggsave()\n\n\n\n\nRaw variable names do not appear in the figure\n\n\nfit &lt;- survfit2(Surv(time, status) ~ surg, data = df_colon) \nsurvminer::ggsurvplot(fit)\nggsurvfit(fit)"
+  },
+  {
+    "objectID": "slides/why-ggsurvfit.html#use-ggplot2-functions",
+    "href": "slides/why-ggsurvfit.html#use-ggplot2-functions",
+    "title": "Why {ggsurvfit} ?",
+    "section": "",
+    "text": "Each ggsurvfit add-on function is written as a proper ggplot2 geom\nEnables package functions woven with ggplot2 functions seamlessly\nDon’t need to learn to style with ggsurvfit functions\nUse your ggplot2 knowledge if you want to customize\n\nLimitless customization\n\nModify x-axis scales or any other plot feature and risk table will still align with plot\n\nSimple saving and export through ggplot2::ggsave()"
+  },
+  {
+    "objectID": "slides/why-ggsurvfit.html#ready-to-publish-legends",
+    "href": "slides/why-ggsurvfit.html#ready-to-publish-legends",
+    "title": "Why {ggsurvfit} ?",
+    "section": "",
+    "text": "Raw variable names do not appear in the figure\n\n\nfit &lt;- survfit2(Surv(time, status) ~ surg, data = df_colon) \nsurvminer::ggsurvplot(fit)\nggsurvfit(fit)"
   }
 ]

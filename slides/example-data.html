@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction to the {ggsurvfit} R Package – overview</title>
+<title>Introduction to the {ggsurvfit} R Package – example-data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -162,34 +162,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#outline" id="toc-outline" class="nav-link active" data-scroll-target="#outline">Outline</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
-  <li><a href="#basic-example" id="toc-basic-example" class="nav-link" data-scroll-target="#basic-example">Basic Example</a></li>
-  <li><a href="#basic-example-1" id="toc-basic-example-1" class="nav-link" data-scroll-target="#basic-example-1">Basic Example</a></li>
-  <li><a href="#basic-example-2" id="toc-basic-example-2" class="nav-link" data-scroll-target="#basic-example-2">Basic Example</a></li>
-  <li><a href="#another-example" id="toc-another-example" class="nav-link" data-scroll-target="#another-example">Another Example</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link active" data-scroll-target="#data">Data</a>
+  <ul class="collapse">
+  <li><a href="#data-1" id="toc-data-1" class="nav-link" data-scroll-target="#data-1">Data</a></li>
+  <li><a href="#data-2" id="toc-data-2" class="nav-link" data-scroll-target="#data-2">Data</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ddsjoberg/ggsurvfit-useR-2023/edit/main/slides-extenders/01-overview.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/ddsjoberg/ggsurvfit-useR-2023/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ddsjoberg/ggsurvfit-useR-2023/edit/main/slides/example-data.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/ddsjoberg/ggsurvfit-useR-2023/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 
-<section id="outline" class="level1">
-<h1>Outline</h1>
-<div class="larger2">
-<ul>
-<li><p><strong>Overview of package functionality</strong></p></li>
-<li><p>Discussion for ggplot2-extenders</p></li>
-</ul>
-</div>
-</section>
 <section id="data" class="level1">
 <h1>Data</h1>
-<p>Examples use a labeled version of the <code>survival::colon</code> data set.</p>
-<div class="columns">
-<div class="column" style="width:50%;">
+<p>The following examples use a labeled version of the <code>survival::colon</code> data set.</p>
+<section id="data-1" class="level2">
+<h2 class="anchored" data-anchor-id="data-1">Data</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggsurvfit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -229,29 +219,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 # ℹ 919 more rows</code></pre>
 </div>
 </div>
-</div><div class="column" style="width:50%;">
+</section>
+<section id="data-2" class="level2">
+<h2 class="anchored" data-anchor-id="data-2">Data</h2>
 <div class="cell" data-freeze="false">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df_colon <span class="sc">|&gt;</span> </span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tbl_summary</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="oucihmoyss" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#oucihmoyss table {
+<div id="xolqfdhjgv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xolqfdhjgv table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#oucihmoyss thead, #oucihmoyss tbody, #oucihmoyss tfoot, #oucihmoyss tr, #oucihmoyss td, #oucihmoyss th {
+#xolqfdhjgv thead, #xolqfdhjgv tbody, #xolqfdhjgv tfoot, #xolqfdhjgv tr, #xolqfdhjgv td, #xolqfdhjgv th {
   border-style: none;
 }
 
-#oucihmoyss p {
+#xolqfdhjgv p {
   margin: 0;
   padding: 0;
 }
 
-#oucihmoyss .gt_table {
+#xolqfdhjgv .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -277,12 +269,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#oucihmoyss .gt_caption {
+#xolqfdhjgv .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#oucihmoyss .gt_title {
+#xolqfdhjgv .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -294,7 +286,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#oucihmoyss .gt_subtitle {
+#xolqfdhjgv .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -306,7 +298,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#oucihmoyss .gt_heading {
+#xolqfdhjgv .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -318,13 +310,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#oucihmoyss .gt_bottom_border {
+#xolqfdhjgv .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#oucihmoyss .gt_col_headings {
+#xolqfdhjgv .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -339,7 +331,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#oucihmoyss .gt_col_heading {
+#xolqfdhjgv .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -359,7 +351,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#oucihmoyss .gt_column_spanner_outer {
+#xolqfdhjgv .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -371,15 +363,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#oucihmoyss .gt_column_spanner_outer:first-child {
+#xolqfdhjgv .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#oucihmoyss .gt_column_spanner_outer:last-child {
+#xolqfdhjgv .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#oucihmoyss .gt_column_spanner {
+#xolqfdhjgv .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -391,11 +383,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#oucihmoyss .gt_spanner_row {
+#xolqfdhjgv .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#oucihmoyss .gt_group_heading {
+#xolqfdhjgv .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -421,7 +413,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#oucihmoyss .gt_empty_group_heading {
+#xolqfdhjgv .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -436,15 +428,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#oucihmoyss .gt_from_md > :first-child {
+#xolqfdhjgv .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#oucihmoyss .gt_from_md > :last-child {
+#xolqfdhjgv .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#oucihmoyss .gt_row {
+#xolqfdhjgv .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -463,7 +455,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#oucihmoyss .gt_stub {
+#xolqfdhjgv .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -476,7 +468,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#oucihmoyss .gt_stub_row_group {
+#xolqfdhjgv .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -490,15 +482,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#oucihmoyss .gt_row_group_first td {
+#xolqfdhjgv .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#oucihmoyss .gt_row_group_first th {
+#xolqfdhjgv .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#oucihmoyss .gt_summary_row {
+#xolqfdhjgv .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -508,16 +500,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#oucihmoyss .gt_first_summary_row {
+#xolqfdhjgv .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#oucihmoyss .gt_first_summary_row.thick {
+#xolqfdhjgv .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#oucihmoyss .gt_last_summary_row {
+#xolqfdhjgv .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -527,7 +519,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#oucihmoyss .gt_grand_summary_row {
+#xolqfdhjgv .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -537,7 +529,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#oucihmoyss .gt_first_grand_summary_row {
+#xolqfdhjgv .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -547,7 +539,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#oucihmoyss .gt_last_grand_summary_row_top {
+#xolqfdhjgv .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -557,11 +549,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#oucihmoyss .gt_striped {
+#xolqfdhjgv .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#oucihmoyss .gt_table_body {
+#xolqfdhjgv .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -570,7 +562,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#oucihmoyss .gt_footnotes {
+#xolqfdhjgv .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -584,7 +576,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#oucihmoyss .gt_footnote {
+#xolqfdhjgv .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -593,7 +585,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#oucihmoyss .gt_sourcenotes {
+#xolqfdhjgv .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -607,7 +599,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#oucihmoyss .gt_sourcenote {
+#xolqfdhjgv .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -615,63 +607,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#oucihmoyss .gt_left {
+#xolqfdhjgv .gt_left {
   text-align: left;
 }
 
-#oucihmoyss .gt_center {
+#xolqfdhjgv .gt_center {
   text-align: center;
 }
 
-#oucihmoyss .gt_right {
+#xolqfdhjgv .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#oucihmoyss .gt_font_normal {
+#xolqfdhjgv .gt_font_normal {
   font-weight: normal;
 }
 
-#oucihmoyss .gt_font_bold {
+#xolqfdhjgv .gt_font_bold {
   font-weight: bold;
 }
 
-#oucihmoyss .gt_font_italic {
+#xolqfdhjgv .gt_font_italic {
   font-style: italic;
 }
 
-#oucihmoyss .gt_super {
+#xolqfdhjgv .gt_super {
   font-size: 65%;
 }
 
-#oucihmoyss .gt_footnote_marks {
+#xolqfdhjgv .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#oucihmoyss .gt_asterisk {
+#xolqfdhjgv .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#oucihmoyss .gt_indent_1 {
+#xolqfdhjgv .gt_indent_1 {
   text-indent: 5px;
 }
 
-#oucihmoyss .gt_indent_2 {
+#xolqfdhjgv .gt_indent_2 {
   text-indent: 10px;
 }
 
-#oucihmoyss .gt_indent_3 {
+#xolqfdhjgv .gt_indent_3 {
   text-indent: 15px;
 }
 
-#oucihmoyss .gt_indent_4 {
+#xolqfdhjgv .gt_indent_4 {
   text-indent: 20px;
 }
 
-#oucihmoyss .gt_indent_5 {
+#xolqfdhjgv .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -705,119 +697,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</div>
-</div>
-</section>
-<section id="basic-example" class="level1">
-<h1>Basic Example</h1>
-<div class="columns">
-<div class="column" style="width:80%;">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">survfit2</span>(<span class="fu">Surv</span>(time, status) <span class="sc">~</span> surg, <span class="at">data =</span> df_colon) <span class="sc">|&gt;</span> </span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggsurvfit</span>() <span class="sc">+</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_risktable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="01-overview_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-</div><div class="column" style="width:20%;">
-<div class="smaller">
-<div class="incremental">
-<ul class="incremental">
-<li>The Good
-<ul class="incremental">
-<li>Simple code and figure is nearly publishable</li>
-<li>Risk table with both no. at risk and events easily added</li>
-<li>x-axis label taken from the <code>time</code> column label</li>
-<li>Can use <strong>ggplot2</strong> <code>+</code> notation</li>
-</ul></li>
-<li>The Could-Be-Better
-<ul class="incremental">
-<li>y-axis label is incorrect, and the range of axis is best at 0-100%</li>
-<li>Axis padding a bit more than I prefer for a Kaplan-Meier figure</li>
-<li>x-axis typically has more tick marks for Kaplan-Meier figure</li>
-</ul></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="basic-example-1" class="level1">
-<h1>Basic Example</h1>
-<div class="columns">
-<div class="column" style="width:80%;">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">survfit2</span>(<span class="fu">Surv</span>(time, status) <span class="sc">~</span> surg, <span class="at">data =</span> df_colon) <span class="sc">|&gt;</span> </span>
-<span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">ggsurvfit</span>() <span class="sc">+</span></span>
-<span id="cb10-3"><a href="#cb10-3"></a>  <span class="fu">add_risktable</span>() <span class="sc">+</span></span>
-<span id="cb10-4"><a href="#cb10-4"></a>  <span class="fu">scale_ggsurvfit</span>() <span class="sc">+</span></span>
-<span id="cb10-5"><a href="#cb10-5"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Recurrence-free Progression"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="01-overview_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-</div><div class="column" style="width:20%;">
-<div class="smaller">
-<div class="incremental">
-<ul class="incremental">
-<li><p>Padding has been reduced and curves begin in the upper left corner of plot</p></li>
-<li><p>x-axis reports additional time points (and as a result, the risk table as well)</p></li>
-<li><p>We updated the y-axis label weaving standard <strong>ggplot2</strong> functions</p></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="basic-example-2" class="level1">
-<h1>Basic Example</h1>
-<div class="columns">
-<div class="column" style="width:80%;">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">survfit2</span>(<span class="fu">Surv</span>(time, status) <span class="sc">~</span> surg, <span class="at">data =</span> df_colon) <span class="sc">|&gt;</span> </span>
-<span id="cb11-2"><a href="#cb11-2"></a>  <span class="fu">ggsurvfit</span>() <span class="sc">+</span></span>
-<span id="cb11-3"><a href="#cb11-3"></a>  <span class="fu">add_risktable</span>() <span class="sc">+</span></span>
-<span id="cb11-4"><a href="#cb11-4"></a>  <span class="fu">scale_ggsurvfit</span>() <span class="sc">+</span></span>
-<span id="cb11-5"><a href="#cb11-5"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Recurrence-free Progression"</span>) <span class="sc">+</span></span>
-<span id="cb11-6"><a href="#cb11-6"></a>  ggeasy<span class="sc">::</span><span class="fu">easy_move_legend</span>(<span class="st">"top"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="01-overview_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-</div><div class="column" style="width:20%;">
-<div class="smaller">
-<ul>
-<li><p>Padding has been reduced and curves begin in the upper left corner of plot</p></li>
-<li><p>x-axis reports additional time points (and as a result, the risk table as well)</p></li>
-<li><p>We updated the y-axis label weaving standard <strong>ggplot2</strong> functions</p></li>
-<li><p>We can even use ggplot2-extender functions</p></li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="another-example" class="level1">
-<h1>Another Example</h1>
-<div class="cell" data-output-location="slide">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">survfit2</span>(<span class="fu">Surv</span>(time, status) <span class="sc">~</span> surg, <span class="at">data =</span> df_colon) <span class="sc">|&gt;</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a>  <span class="fu">ggsurvfit</span>(<span class="at">type =</span> <span class="st">"risk"</span>, <span class="at">linewidth =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
-<span id="cb12-3"><a href="#cb12-3"></a>  <span class="fu">add_confidence_interval</span>() <span class="sc">+</span></span>
-<span id="cb12-4"><a href="#cb12-4"></a>  <span class="fu">add_risktable</span>(<span class="at">risktable_stats =</span> <span class="st">"n.risk"</span>) <span class="sc">+</span></span>
-<span id="cb12-5"><a href="#cb12-5"></a>  <span class="fu">add_risktable_strata_symbol</span>(<span class="at">symbol =</span> <span class="st">"\U25CF"</span>, <span class="at">size =</span> <span class="dv">17</span>) <span class="sc">+</span></span>
-<span id="cb12-6"><a href="#cb12-6"></a>  <span class="fu">add_quantile</span>(<span class="at">x_value =</span> <span class="dv">5</span>, <span class="at">linetype =</span> <span class="st">"dotted"</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb12-7"><a href="#cb12-7"></a>  <span class="fu">add_censor_mark</span>(<span class="at">size =</span> <span class="dv">2</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb12-8"><a href="#cb12-8"></a>  <span class="fu">add_pvalue</span>(<span class="at">caption =</span> <span class="st">"Log-rank {p.value}"</span>) <span class="sc">+</span></span>
-<span id="cb12-9"><a href="#cb12-9"></a>  <span class="fu">scale_ggsurvfit</span>() <span class="sc">+</span></span>
-<span id="cb12-10"><a href="#cb12-10"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">'#54738E'</span>, <span class="st">'#82AC7C'</span>)) <span class="sc">+</span></span>
-<span id="cb12-11"><a href="#cb12-11"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">'#54738E'</span>, <span class="st">'#82AC7C'</span>)) <span class="sc">+</span></span>
-<span id="cb12-12"><a href="#cb12-12"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Risk of Recurrence"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="01-overview_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

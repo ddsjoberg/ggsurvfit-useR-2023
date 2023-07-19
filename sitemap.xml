@@ -2,30 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://github.com/ddsjoberg/ggsurvfit-useR-2023/slidespage.html</loc>
-    <lastmod>2023-07-05T16:12:02.636Z</lastmod>
+    <lastmod>2023-07-19T15:58:15.856Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/ddsjoberg/ggsurvfit-useR-2023/slides/overview.html</loc>
+    <lastmod>2023-07-19T15:57:49.057Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/ddsjoberg/ggsurvfit-useR-2023/slides/ggsurvfit-examples.html</loc>
+    <lastmod>2023-07-19T15:57:21.497Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/ddsjoberg/ggsurvfit-useR-2023/slides/example-data.html</loc>
+    <lastmod>2023-07-19T15:56:22.054Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/ddsjoberg/ggsurvfit-useR-2023/slides/basic-example.html</loc>
+    <lastmod>2023-07-19T15:55:54.878Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/ddsjoberg/ggsurvfit-useR-2023/slides-extenders/index.html</loc>
-    <lastmod>2023-07-05T16:12:01.240Z</lastmod>
+    <lastmod>2023-07-19T15:54:59.954Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/ddsjoberg/ggsurvfit-useR-2023/slides-extenders/01-overview.html</loc>
-    <lastmod>2023-07-05T16:11:55.396Z</lastmod>
+    <lastmod>2023-07-19T15:54:32.611Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/ddsjoberg/ggsurvfit-useR-2023/index.html</loc>
-    <lastmod>2023-07-05T16:11:44.376Z</lastmod>
+    <lastmod>2023-07-19T15:53:36.183Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/ddsjoberg/ggsurvfit-useR-2023/slides-extenders/00-setup.html</loc>
-    <lastmod>2023-07-05T16:11:46.416Z</lastmod>
+    <lastmod>2023-07-19T15:54:00.263Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/ddsjoberg/ggsurvfit-useR-2023/slides-extenders/02-discussion.html</loc>
-    <lastmod>2023-07-05T16:11:59.396Z</lastmod>
+    <lastmod>2023-07-19T15:54:59.034Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/ddsjoberg/ggsurvfit-useR-2023/slides/KMunicate.html</loc>
+    <lastmod>2023-07-19T15:55:26.646Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/ddsjoberg/ggsurvfit-useR-2023/slides/conclusion.html</loc>
+    <lastmod>2023-07-19T15:55:55.162Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/ddsjoberg/ggsurvfit-useR-2023/slides/ggsurvfit-examples-backups.html</loc>
+    <lastmod>2023-07-19T15:56:50.105Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/ddsjoberg/ggsurvfit-useR-2023/slides/index.html</loc>
-    <lastmod>2023-07-05T16:12:02.028Z</lastmod>
+    <lastmod>2023-07-19T15:57:23.345Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/ddsjoberg/ggsurvfit-useR-2023/slides/why-ggsurvfit.html</loc>
+    <lastmod>2023-07-19T15:58:15.576Z</lastmod>
   </url>
 </urlset>
