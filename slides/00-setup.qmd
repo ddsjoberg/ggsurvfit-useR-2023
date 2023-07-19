@@ -1,12 +1,15 @@
-# Introduction
+# {ggsurvfit}
 
 ```{r}
 #| echo: false
 #| cache: false
+library(ggsurvfit)
+library(survival)
 library(tidyverse)
 # fill for font awesome icons
 fa_fill <- "#606060"
 ```
+
 
 ## Licensing
 

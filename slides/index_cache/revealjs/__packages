@@ -1,5 +1,7 @@
-tidyverse
+ggsurvfit
 ggplot2
+survival
+tidyverse
 tibble
 tidyr
 readr
@@ -8,6 +10,4 @@ dplyr
 stringr
 forcats
 lubridate
-ggsurvfit
-gtsummary
 patchwork
