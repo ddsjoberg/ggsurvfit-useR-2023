@@ -8,7 +8,7 @@ engine: knitr
 format: 
   revealjs: 
     theme: slides.scss
-    transition: fade
+    transition: none #fade
     slide-number: true
     chalkboard: true
 execute:
@@ -19,11 +19,11 @@ cache: true
 
 {{< include 00-setup.qmd >}}
 
-{{< include 01-overview.qmd >}}
+{{< include overview.qmd >}}
 
 {{< include why-ggsurvfit.qmd >}}
 
-{{< include example-data.qmd >}}
+<!-- {{< include example-data.qmd >}} -->
 
 {{< include basic-example.qmd >}}
 
@@ -31,7 +31,7 @@ cache: true
 
 {{< include KMunicate.qmd >}}
 
-{{< include 03-cdisc.qmd >}}
+<!-- {{< include 03-cdisc.qmd >}} -->
 
 {{< include conclusion.qmd >}}
 

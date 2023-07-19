@@ -1,4 +1,4 @@
-# Introduction
+# {ggsurvfit}
 
 ```{r}
 #| echo: false

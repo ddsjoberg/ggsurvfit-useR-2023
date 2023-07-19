@@ -23,8 +23,8 @@ survfit2(Surv(time, status) ~ surg, data = df_colon) |>
   
 * The Could-Be-Better
   - y-axis label is incorrect, and the range of axis is best at 0-100%
-  - Axis padding a bit more than I prefer for a Kaplan-Meier figure
-  - x-axis typically has more tick marks for Kaplan-Meier figure
+  - Axis padding a bit more than I prefer for a KM figure
+  - x-axis typically has more tick marks for KM figure
 
 :::
 :::
