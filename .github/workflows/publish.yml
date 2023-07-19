@@ -18,6 +18,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Install V8 engine on Linux
+        if: runner.os == 'Linux'
+        run: sudo apt-get install libv8-dev
+
       - name: Install Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
