@@ -1,5 +1,11 @@
 # Back-up examples
 
+```{r}
+#| echo: false
+#| message: false
+library(ggsurvfit)
+```
+
 Left over examples removed from main deck
 
 ## Underyling {ggsurvfit} functions 

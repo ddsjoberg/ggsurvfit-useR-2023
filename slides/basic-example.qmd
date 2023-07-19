@@ -1,5 +1,11 @@
 # Basic Example
 
+```{r}
+#| echo: false
+#| message: false
+library(ggsurvfit)
+```
+
 ::: columns
 ::: {.column width="80%"}
 

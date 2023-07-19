@@ -1,5 +1,11 @@
 # KMunicate and themes
 
+```{r}
+#| echo: false
+#| message: false
+library(ggsurvfit)
+```
+
 ## What are the elements of an effective and publishable KM plot? 
 
 ::: {.smaller}

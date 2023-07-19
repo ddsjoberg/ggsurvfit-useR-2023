@@ -1,5 +1,11 @@
 # A whistle stop tour of {ggsurvfit}
 
+```{r}
+#| echo: false
+#| message: false
+library(ggsurvfit)
+```
+
 * Motivation and why {ggsurvfit} ? 
 
 * **Overview of package functionality**

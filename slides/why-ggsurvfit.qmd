@@ -1,5 +1,11 @@
 # Why {ggsurvfit} ?
 
+```{r}
+#| echo: false
+#| message: false
+library(ggsurvfit)
+```
+
 ## Use ggplot2 functions
 
 * Each `ggsurvfit` add-on function is written as a proper `ggplot2` geom

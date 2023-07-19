@@ -2,6 +2,12 @@
 
 # Default and styled modifications with ggplot2
 
+```{r}
+#| echo: false
+#| message: false
+library(ggsurvfit)
+```
+
 ## {ggsurvfit} defaults 
 
 ```{r}
