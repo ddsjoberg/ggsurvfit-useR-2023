@@ -25,7 +25,7 @@ Simple saving and export through `ggplot2::ggsave()`
 
 ```{r}
 #| layout-ncol: 2
-
+#| fig-height: 8
 fit <- survfit2(Surv(time, status) ~ surg, data = df_colon) 
 survminer::ggsurvplot(fit)
 ggsurvfit(fit) 
