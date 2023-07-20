@@ -454,25 +454,25 @@ Daniel D. Sjoberg &amp; Mark Baillie
 <p>John Tukey insisted Edward L. Kaplan and Paul Meier combine their efforts after submitting independent papers to JASA, which took 4 more years for the authors of the “KM” estimator to publish</p>
 <p>Afterwards “Paul Meier himself is said to have spoken with bemusement about people plotting KM estimates over time and was not convinced he actually liked it” <a href="https://bmjopen.bmj.com/content/9/9/e030215">Morris et al, 2018</a></p>
 </div>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-2_9bd8ef166dfe505fb8602034a333b5f5">
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-3_adad4117ecca4f3885a6a7d1df2b6929">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(survival)</span>
 <span id="cb1-2"><a href="#cb1-2"></a>fit <span class="ot">&lt;-</span> <span class="fu">survfit</span>(<span class="fu">Surv</span>(time, status) <span class="sc">~</span> surg, <span class="at">data =</span> df_colon) </span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="fu">plot</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="index_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
 <section id="can-we-do-better" class="slide level2">
 <h2>Can we do better?</h2>
 <div class="smaller">
 <p>There are many design and analytical choices to be made when designing even a simple KM plot – these choices can lead to wide variation in presentation quality.</p>
 </div>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-3_1ec2f5f245862edd9804a4012d9218cd">
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-4_0afd07fbf8a4fa58baca51174da5c053">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">library</span>(ggsurvfit)</span>
 <span id="cb2-2"><a href="#cb2-2"></a>fit2 <span class="ot">&lt;-</span> <span class="fu">survfit2</span>(<span class="fu">Surv</span>(time, status) <span class="sc">~</span> surg, <span class="at">data =</span> df_colon) </span>
 <span id="cb2-3"><a href="#cb2-3"></a><span class="fu">ggsurvfit</span>(fit2) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="index_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
 <section id="ggsurvfit-overview" class="slide level2">
 <h2>{ggsurvfit} overview</h2>
 <ul>
@@ -512,13 +512,13 @@ Daniel D. Sjoberg &amp; Mark Baillie
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">survfit2</span>(<span class="fu">Surv</span>(time, status) <span class="sc">~</span> surg, <span class="at">data =</span> df_colon) </span>
 <span id="cb3-2"><a href="#cb3-2"></a>survminer<span class="sc">::</span><span class="fu">ggsurvplot</span>(fit)</span>
 <span id="cb3-3"><a href="#cb3-3"></a><span class="fu">ggsurvfit</span>(fit) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell quarto-layout-panel" data-hash="index_cache/revealjs/unnamed-chunk-4_e6e4aa9d95c84c625fe6909826733d99">
+<div class="cell quarto-layout-panel" data-hash="index_cache/revealjs/unnamed-chunk-6_9c9870c50e74fccf9abda5b0676a2fef">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-6-1.png" width="960"></p>
 </div>
 <div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-4-2.png" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-6-2.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -529,12 +529,12 @@ Daniel D. Sjoberg &amp; Mark Baillie
 <h1>Basic Example</h1>
 <div class="columns">
 <div class="column" style="width:80%;">
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-5_36710f760ee7977abb72acca0e37e3a4">
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-8_472bcb6883d69d1e109a28109ad8e26a">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">survfit2</span>(<span class="fu">Surv</span>(time, status) <span class="sc">~</span> surg, <span class="at">data =</span> df_colon) <span class="sc">|&gt;</span> </span>
 <span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">ggsurvfit</span>() <span class="sc">+</span></span>
 <span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">add_risktable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-5-1.png" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
 </div>
 </div>
 </div><div class="column" style="width:20%;">
@@ -565,14 +565,14 @@ Daniel D. Sjoberg &amp; Mark Baillie
 <h1>Basic Example</h1>
 <div class="columns">
 <div class="column" style="width:80%;">
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-6_31de7c8cd6f256c6cfdbe6c43daa31ff">
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-9_33c9659146a49443167d4a24af79f33a">
 <div class="sourceCode cell-code" id="cb5" data-code-line-numbers="4-5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">survfit2</span>(<span class="fu">Surv</span>(time, status) <span class="sc">~</span> surg, <span class="at">data =</span> df_colon) <span class="sc">|&gt;</span> </span>
 <span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">ggsurvfit</span>() <span class="sc">+</span></span>
 <span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">add_risktable</span>() <span class="sc">+</span></span>
 <span id="cb5-4"><a href="#cb5-4"></a>  <span class="fu">scale_ggsurvfit</span>() <span class="sc">+</span></span>
 <span id="cb5-5"><a href="#cb5-5"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Recurrence-free Progression"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-6-1.png" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-9-1.png" width="960"></p>
 </div>
 </div>
 </div><div class="column" style="width:20%;">
@@ -593,7 +593,7 @@ Daniel D. Sjoberg &amp; Mark Baillie
 <h1>Basic Example</h1>
 <div class="columns">
 <div class="column" style="width:80%;">
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-7_357969a9fd0995a2e9887e48e4013e89">
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-10_56007d4f3631dd07299be8d3b0d66bfd">
 <div class="sourceCode cell-code" id="cb6" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">survfit2</span>(<span class="fu">Surv</span>(time, status) <span class="sc">~</span> surg, <span class="at">data =</span> df_colon) <span class="sc">|&gt;</span> </span>
 <span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">ggsurvfit</span>() <span class="sc">+</span></span>
 <span id="cb6-3"><a href="#cb6-3"></a>  <span class="fu">add_risktable</span>() <span class="sc">+</span></span>
@@ -601,7 +601,7 @@ Daniel D. Sjoberg &amp; Mark Baillie
 <span id="cb6-5"><a href="#cb6-5"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Recurrence-free Progression"</span>) <span class="sc">+</span></span>
 <span id="cb6-6"><a href="#cb6-6"></a>  ggeasy<span class="sc">::</span><span class="fu">easy_move_legend</span>(<span class="st">"top"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-7-1.png" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
 </div>
 </div>
 </div><div class="column" style="width:20%;">
@@ -629,7 +629,7 @@ Daniel D. Sjoberg &amp; Mark Baillie
 </section>
 <section id="ggsurvfit-defaults" class="slide level2">
 <h2>{ggsurvfit} defaults</h2>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-8_e8d402ff62bc5128c73dbbc3ec4ba5a2">
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-12_42b5cb91b7d978bf4fa71a6d96235eff">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>gg_default <span class="ot">&lt;-</span></span>
 <span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">survfit2</span>(<span class="fu">Surv</span>(time, status) <span class="sc">~</span> surg, <span class="at">data =</span> df_colon) <span class="sc">|&gt;</span></span>
 <span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">ggsurvfit</span>() <span class="sc">+</span></span>
@@ -639,10 +639,10 @@ Daniel D. Sjoberg &amp; Mark Baillie
 <span id="cb7-7"><a href="#cb7-7"></a>gg_default</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="index_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section>
 <section id="ggplot2-styled" class="slide level2">
 <h2>{ggplot2} styled</h2>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-9_fc736a1a69870984c236ccdeb3d6af26">
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-13_d40dba0ae11899153a36de84865c6ea3">
 <div class="sourceCode cell-code" id="cb8" data-code-line-numbers="|2|3|4-8|9|10-11|12-13|14|15-18|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>gg_styled <span class="ot">&lt;-</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a>  gg_default <span class="sc">+</span></span>
 <span id="cb8-3"><a href="#cb8-3"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">8</span>)) <span class="sc">+</span></span>
@@ -666,18 +666,18 @@ Daniel D. Sjoberg &amp; Mark Baillie
 </div>
 
 </section>
-<section id="ggplot2-styled-output" class="slide level2 output-location-slide"><h2>{ggplot2} styled</h2><div class="cell output-location-slide" data-hash="index_cache/revealjs/unnamed-chunk-9_fc736a1a69870984c236ccdeb3d6af26">
+<section id="ggplot2-styled-output" class="slide level2 output-location-slide"><h2>{ggplot2} styled</h2><div class="cell output-location-slide" data-hash="index_cache/revealjs/unnamed-chunk-13_d40dba0ae11899153a36de84865c6ea3">
 <div class="cell-output-display">
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-9-1.png" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-13-1.png" width="960"></p>
 </div>
 </div></section><section id="side-by-side" class="slide level2">
 <h2>Side-by-side</h2>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-10_1a92599536444083c4ade44c1afe8022">
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-14_5041bb44c9d78226141a81f9c2d57526">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">library</span>(patchwork)</span>
 <span id="cb9-2"><a href="#cb9-2"></a>gg_default <span class="sc">+</span> gg_styled</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="index_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch"></section></section>
 <section>
 <section id="risk-tables" class="title-slide slide level1 center">
 <h1>Risk tables</h1>
@@ -685,16 +685,16 @@ Daniel D. Sjoberg &amp; Mark Baillie
 </section>
 <section id="ggsurvfit-defaults-1" class="slide level2">
 <h2>{ggsurvfit} defaults</h2>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-11_77c13c7625f24f5cec8670354dbbe979">
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-15_9165f6aed2c2f06ad193c7ea8f7fd1a3">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">survfit2</span>(<span class="fu">Surv</span>(time, status) <span class="sc">~</span> surg, <span class="at">data =</span> df_colon) <span class="sc">|&gt;</span></span>
 <span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">ggsurvfit</span>() <span class="sc">+</span></span>
 <span id="cb10-3"><a href="#cb10-3"></a>  <span class="fu">add_risktable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="index_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"></section>
 <section id="group-by-statistic-or-strata" class="slide level2">
 <h2>Group by statistic or strata</h2>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-12_35100333101e418cf252178c11356d24">
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-16_b42e72dc5eeab341a72bb12cd844a3d4">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>ggrisktable <span class="ot">&lt;-</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a>  <span class="fu">survfit2</span>(<span class="fu">Surv</span>(time, status) <span class="sc">~</span> surg, <span class="at">data =</span> df_colon) <span class="sc">|&gt;</span></span>
 <span id="cb11-3"><a href="#cb11-3"></a>  <span class="fu">ggsurvfit</span>() <span class="sc">+</span></span>
@@ -703,24 +703,24 @@ Daniel D. Sjoberg &amp; Mark Baillie
 <span id="cb11-6"><a href="#cb11-6"></a>ggrisktable</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="index_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-16-1.png" width="960" class="r-stretch"></section>
 <section id="colour-encoding-strata" class="slide level2">
 <h2>Colour encoding strata</h2>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-13_8464d53829eda0543eacaa1bda6bb58c">
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-17_734e49c34c9a241e6e279dff93c07af0">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>ggrisktable <span class="sc">+</span></span>
 <span id="cb12-2"><a href="#cb12-2"></a>  <span class="fu">add_risktable_strata_symbol</span>(<span class="at">symbol =</span> <span class="st">"\U25CF"</span>, <span class="at">size =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="index_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-17-1.png" width="960" class="r-stretch"></section>
 <section id="customizing-the-risktable-statistics" class="slide level2">
 <h2>Customizing the risktable statistics</h2>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-14_0fba4f7ae0a8a4eebf7563c51a979f40">
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-18_72721892c6166b975192b6ec9a79f8f1">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">survfit2</span>(<span class="fu">Surv</span>(time, status) <span class="sc">~</span> surg, <span class="at">data =</span> df_colon) <span class="sc">|&gt;</span></span>
 <span id="cb13-2"><a href="#cb13-2"></a>  <span class="fu">ggsurvfit</span>() <span class="sc">+</span></span>
 <span id="cb13-3"><a href="#cb13-3"></a>  <span class="fu">add_risktable</span>(<span class="at">risktable_stats =</span> <span class="st">"{n.risk} ({cum.event})"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="index_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch"></section></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-18-1.png" width="960" class="r-stretch"></section></section>
 <section>
 <section id="quantiles" class="title-slide slide level1 center">
 <h1>Quantiles</h1>
@@ -728,17 +728,17 @@ Daniel D. Sjoberg &amp; Mark Baillie
 </section>
 <section id="median-summary" class="slide level2">
 <h2>Median summary</h2>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-15_7dc4ff5d9be775b33bf1e5bc41472629">
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-19_8e098cc7dc5364932503c347af9e6c71">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">survfit2</span>(<span class="fu">Surv</span>(time, status) <span class="sc">~</span> surg, <span class="at">data =</span> df_colon) <span class="sc">|&gt;</span></span>
 <span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">ggsurvfit</span>(<span class="at">linewidth =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
 <span id="cb14-3"><a href="#cb14-3"></a>  <span class="fu">add_quantile</span>(<span class="at">y_value =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
 <span id="cb14-4"><a href="#cb14-4"></a>  <span class="fu">scale_ggsurvfit</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="index_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-19-1.png" width="960" class="r-stretch"></section>
 <section id="at-a-given-timepoint" class="slide level2">
 <h2>At a given timepoint</h2>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-16_be605ca460c05370af89b68d6e97d0df">
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-20_ebc76f54a85642cde802078e1a103556">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">survfit2</span>(<span class="fu">Surv</span>(time, status) <span class="sc">~</span> surg, <span class="at">data =</span> df_colon) <span class="sc">|&gt;</span></span>
 <span id="cb15-2"><a href="#cb15-2"></a>  <span class="fu">ggsurvfit</span>(<span class="at">linewidth =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
 <span id="cb15-3"><a href="#cb15-3"></a>  <span class="fu">add_quantile</span>(<span class="at">x_value =</span> <span class="dv">5</span>, <span class="at">linetype =</span> <span class="st">"solid"</span>, </span>
@@ -746,7 +746,7 @@ Daniel D. Sjoberg &amp; Mark Baillie
 <span id="cb15-5"><a href="#cb15-5"></a>  <span class="fu">scale_ggsurvfit</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="index_files/figure-revealjs/unnamed-chunk-16-1.png" width="960" class="r-stretch"></section></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-20-1.png" width="960" class="r-stretch"></section></section>
 <section>
 <section id="kmunicate-and-themes" class="title-slide slide level1 center">
 <h1>KMunicate and themes</h1>
@@ -754,11 +754,15 @@ Daniel D. Sjoberg &amp; Mark Baillie
 </section>
 <section id="what-are-the-elements-of-an-effective-and-publishable-km-plot" class="slide level2">
 <h2>What are the elements of an effective and publishable KM plot?</h2>
+<p>There are many options to consider and many guidances available:</p>
 <div class="smaller">
-<p>There are many options to consider.</p>
-<p>There are many guidances available, <a href="https://bmjopen.bmj.com/content/9/9/e030215">Morris et al.&nbsp;2018</a> provide useful guidance for publication figures</p>
-<p>To get figures that align with the guidelines outlined in “Proposals on Kaplan–Meier plots in medical research and a survey of stakeholder views: KMunicate.”, use the <code>theme_ggsurvfit_KMunicate()</code> theme along with these function options.</p>
-<p>A note of caution on standards.</p>
+<ul>
+<li><p><a href="https://bmjopen.bmj.com/content/9/9/e030215">Morris et al.&nbsp;2018</a> provide useful guidance for publication figures</p></li>
+<li><p>To get figures that align with <strong>KMunicate</strong> use the <code>theme_ggsurvfit_KMunicate()</code> theme along with these function options.</p></li>
+</ul>
+</div>
+<p>A note of caution on standards:</p>
+<div class="smaller">
 <ul>
 <li><p>Design for your purpose, one size does not fit all</p></li>
 <li><p>Designing means you need to think carefully about your <a href="http://graphicsprinciples.github.io/">audience and aims</a></p></li>
@@ -768,7 +772,7 @@ Daniel D. Sjoberg &amp; Mark Baillie
 </section>
 <section id="kmunicate" class="slide level2">
 <h2>KMunicate</h2>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-17_7fc9d98cc28c96f26f7014a916864735">
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-22_d11024a645175ae2b86dce71b4accf1f">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">survfit2</span>(<span class="fu">Surv</span>(time, status) <span class="sc">~</span> surg, <span class="at">data =</span> df_colon) <span class="sc">|&gt;</span></span>
 <span id="cb16-2"><a href="#cb16-2"></a>  <span class="fu">ggsurvfit</span>(<span class="at">linetype_aes =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
 <span id="cb16-3"><a href="#cb16-3"></a>  <span class="fu">add_confidence_interval</span>() <span class="sc">+</span></span>
@@ -782,9 +786,9 @@ Daniel D. Sjoberg &amp; Mark Baillie
 </div>
 
 <!-- {{< include 03-cdisc.qmd >}} -->
-</section><section id="kmunicate-output" class="slide level2 output-location-slide"><h2>KMunicate</h2><div class="cell output-location-slide" data-hash="index_cache/revealjs/unnamed-chunk-17_7fc9d98cc28c96f26f7014a916864735">
+</section><section id="kmunicate-output" class="slide level2 output-location-slide"><h2>KMunicate</h2><div class="cell output-location-slide" data-hash="index_cache/revealjs/unnamed-chunk-22_d11024a645175ae2b86dce71b4accf1f">
 <div class="cell-output-display">
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-17-1.png" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-22-1.png" width="960"></p>
 </div>
 </div></section></section>
 <section id="ggsurvfit-wrap-up" class="title-slide slide level1 center">
@@ -796,6 +800,13 @@ Daniel D. Sjoberg &amp; Mark Baillie
 <li><p>Sensible defaults</p></li>
 <li><p>Also supports competing risks cumulative incidence summaries</p></li>
 </ul>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-23_3b7fee55b3059f626ee76714711c7c09">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># Install ggsurvfit from CRAN with:</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="fu">install.packages</span>(<span class="st">"ggsurvfit"</span>)</span>
+<span id="cb17-3"><a href="#cb17-3"></a></span>
+<span id="cb17-4"><a href="#cb17-4"></a><span class="co"># install.packages("devtools"):</span></span>
+<span id="cb17-5"><a href="#cb17-5"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"pharmaverse/ggsurvfit"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
 <img src="images/ggsurvfit-logo.png" class="slide-logo r-stretch"><div class="footer footer-default">

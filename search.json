@@ -186,14 +186,14 @@
     "href": "slides/KMunicate.html",
     "title": "KMunicate and themes",
     "section": "",
-    "text": "There are many options to consider.\nThere are many guidances available, Morris et al. 2018 provide useful guidance for publication figures\nTo get figures that align with the guidelines outlined in “Proposals on Kaplan–Meier plots in medical research and a survey of stakeholder views: KMunicate.”, use the theme_ggsurvfit_KMunicate() theme along with these function options.\nA note of caution on standards.\n\nDesign for your purpose, one size does not fit all\nDesigning means you need to think carefully about your audience and aims\n\n\n\n\n\n\n\nsurvfit2(Surv(time, status) ~ surg, data = df_colon) |&gt;\n  ggsurvfit(linetype_aes = TRUE) +\n  add_confidence_interval() +\n  add_risktable(\n    risktable_stats = c(\"n.risk\", \"cum.censor\", \"cum.event\")\n  ) +\n  theme_ggsurvfit_KMunicate() +\n  scale_ggsurvfit() +\n  theme(legend.position = c(0.85, 0.85)) +\n  labs(y = \"Recurrence-free Progression\")"
+    "text": "There are many options to consider and many guidances available:\n\n\nMorris et al. 2018 provide useful guidance for publication figures\nTo get figures that align with KMunicate use the theme_ggsurvfit_KMunicate() theme along with these function options.\n\n\nA note of caution on standards:\n\n\nDesign for your purpose, one size does not fit all\nDesigning means you need to think carefully about your audience and aims\n\n\n\n\n\n\n\nsurvfit2(Surv(time, status) ~ surg, data = df_colon) |&gt;\n  ggsurvfit(linetype_aes = TRUE) +\n  add_confidence_interval() +\n  add_risktable(\n    risktable_stats = c(\"n.risk\", \"cum.censor\", \"cum.event\")\n  ) +\n  theme_ggsurvfit_KMunicate() +\n  scale_ggsurvfit() +\n  theme(legend.position = c(0.85, 0.85)) +\n  labs(y = \"Recurrence-free Progression\")"
   },
   {
     "objectID": "slides/KMunicate.html#what-are-the-elements-of-an-effective-and-publishable-km-plot",
     "href": "slides/KMunicate.html#what-are-the-elements-of-an-effective-and-publishable-km-plot",
     "title": "KMunicate and themes",
     "section": "",
-    "text": "There are many options to consider.\nThere are many guidances available, Morris et al. 2018 provide useful guidance for publication figures\nTo get figures that align with the guidelines outlined in “Proposals on Kaplan–Meier plots in medical research and a survey of stakeholder views: KMunicate.”, use the theme_ggsurvfit_KMunicate() theme along with these function options.\nA note of caution on standards.\n\nDesign for your purpose, one size does not fit all\nDesigning means you need to think carefully about your audience and aims"
+    "text": "There are many options to consider and many guidances available:\n\n\nMorris et al. 2018 provide useful guidance for publication figures\nTo get figures that align with KMunicate use the theme_ggsurvfit_KMunicate() theme along with these function options.\n\n\nA note of caution on standards:\n\n\nDesign for your purpose, one size does not fit all\nDesigning means you need to think carefully about your audience and aims"
   },
   {
     "objectID": "slides/KMunicate.html#kmunicate",
@@ -207,7 +207,7 @@
     "href": "slides/conclusion.html",
     "title": "{ggsurvfit} wrap up",
     "section": "",
-    "text": "{ggsurvfit} wrap up\n\nEase the creation of time-to-event summary figures with ggplot2\nConcise and modular code\nReady for publication or sharing figures\nSensible defaults\nAlso supports competing risks cumulative incidence summaries"
+    "text": "{ggsurvfit} wrap up\n\nEase the creation of time-to-event summary figures with ggplot2\nConcise and modular code\nReady for publication or sharing figures\nSensible defaults\nAlso supports competing risks cumulative incidence summaries\n\n\n# Install ggsurvfit from CRAN with:\ninstall.packages(\"ggsurvfit\")\n\n# install.packages(\"devtools\"):\ndevtools::install_github(\"pharmaverse/ggsurvfit\")"
   },
   {
     "objectID": "slides/ggsurvfit-examples-backups.html",
@@ -354,7 +354,7 @@
     "href": "slides/index.html#what-are-the-elements-of-an-effective-and-publishable-km-plot",
     "title": "Visualizing Survival Data with the {ggsurvfit} R Package",
     "section": "What are the elements of an effective and publishable KM plot?",
-    "text": "What are the elements of an effective and publishable KM plot?\n\nThere are many options to consider.\nThere are many guidances available, Morris et al. 2018 provide useful guidance for publication figures\nTo get figures that align with the guidelines outlined in “Proposals on Kaplan–Meier plots in medical research and a survey of stakeholder views: KMunicate.”, use the theme_ggsurvfit_KMunicate() theme along with these function options.\nA note of caution on standards.\n\nDesign for your purpose, one size does not fit all\nDesigning means you need to think carefully about your audience and aims"
+    "text": "What are the elements of an effective and publishable KM plot?\nThere are many options to consider and many guidances available:\n\n\nMorris et al. 2018 provide useful guidance for publication figures\nTo get figures that align with KMunicate use the theme_ggsurvfit_KMunicate() theme along with these function options.\n\n\nA note of caution on standards:\n\n\nDesign for your purpose, one size does not fit all\nDesigning means you need to think carefully about your audience and aims"
   },
   {
     "objectID": "slides/index.html#kmunicate",
