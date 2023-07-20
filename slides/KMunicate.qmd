@@ -8,15 +8,19 @@ library(ggsurvfit)
 
 ## What are the elements of an effective and publishable KM plot? 
 
+There are many options to consider and many guidances available:
+
 ::: {.smaller}
 
-There are many options to consider. 
+* [Morris et al. 2018](https://bmjopen.bmj.com/content/9/9/e030215) provide useful guidance for publication figures
 
-There are many guidances available, [Morris et al. 2018](https://bmjopen.bmj.com/content/9/9/e030215) provide useful guidance for publication figures
+* To get figures that align with **KMunicate** use the `theme_ggsurvfit_KMunicate()` theme along with these function options.
 
-To get figures that align with the guidelines outlined in “Proposals on Kaplan–Meier plots in medical research and a survey of stakeholder views: KMunicate.”, use the `theme_ggsurvfit_KMunicate()` theme along with these function options.
+:::
 
-A note of caution on standards. 
+A note of caution on standards: 
+
+::: {.smaller}
 
 * Design for your purpose, one size does not fit all
 
