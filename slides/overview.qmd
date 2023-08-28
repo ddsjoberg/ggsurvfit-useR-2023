@@ -49,7 +49,7 @@ There are many design and analytical choices to be made when designing even a si
 ```{r}
 library(ggsurvfit)
 fit2 <- survfit2(Surv(time, status) ~ surg, data = df_colon) 
-ggsurvfit(fit2) 
+ggsurvfit(fit2) + scale_ggsurvfit()
 ```
 
 ## {ggsurvfit} overview

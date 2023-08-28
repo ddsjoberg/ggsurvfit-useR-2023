@@ -15,6 +15,7 @@ gg_default <-
   survfit2(Surv(time, status) ~ surg, data = df_colon) |>
   ggsurvfit() +
   add_confidence_interval() +
+  scale_ggsurvfit() +
   labs(title = "Default")
 
 gg_default
@@ -107,6 +108,7 @@ survfit2(Surv(time, status) ~ surg, data = df_colon) |>
 ```{r}
 survfit2(Surv(time, status) ~ surg, data = df_colon) |>
   ggsurvfit(linewidth = 0.8) +
+  add_censor_mark() +
   add_quantile(y_value = 0.5) +
   scale_ggsurvfit()
 ```
@@ -117,6 +119,7 @@ survfit2(Surv(time, status) ~ surg, data = df_colon) |>
 ```{r}
 survfit2(Surv(time, status) ~ surg, data = df_colon) |>
   ggsurvfit(linewidth = 0.8) +
+  add_censor_mark() +
   add_quantile(x_value = 5, linetype = "solid", 
                linewidth = 1.0, alpha = 0.3) +
   scale_ggsurvfit()
