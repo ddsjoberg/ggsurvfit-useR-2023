@@ -25,7 +25,7 @@
     "href": "slides/overview.html#can-we-do-better",
     "title": "A whistle stop tour of {ggsurvfit}",
     "section": "Can we do better?",
-    "text": "Can we do better?\n\nThere are many design and analytical choices to be made when designing even a simple KM plot – these choices can lead to wide variation in presentation quality.\n\n\nlibrary(ggsurvfit)\nfit2 &lt;- survfit2(Surv(time, status) ~ surg, data = df_colon) \nggsurvfit(fit2)"
+    "text": "Can we do better?\n\nThere are many design and analytical choices to be made when designing even a simple KM plot – these choices can lead to wide variation in presentation quality.\n\n\nlibrary(ggsurvfit)\nfit2 &lt;- survfit2(Surv(time, status) ~ surg, data = df_colon) \nggsurvfit(fit2) + scale_ggsurvfit()"
   },
   {
     "objectID": "slides/overview.html#ggsurvfit-overview",
@@ -39,14 +39,14 @@
     "href": "slides/ggsurvfit-examples.html#ggsurvfit-defaults",
     "title": "Additional examples",
     "section": "{ggsurvfit} defaults",
-    "text": "{ggsurvfit} defaults\n\ngg_default &lt;-\n  survfit2(Surv(time, status) ~ surg, data = df_colon) |&gt;\n  ggsurvfit() +\n  add_confidence_interval() +\n  labs(title = \"Default\")\n\ngg_default"
+    "text": "{ggsurvfit} defaults\n\ngg_default &lt;-\n  survfit2(Surv(time, status) ~ surg, data = df_colon) |&gt;\n  ggsurvfit() +\n  add_confidence_interval() +\n  scale_ggsurvfit() +\n  labs(title = \"Default\")\n\ngg_default"
   },
   {
     "objectID": "slides/ggsurvfit-examples.html#ggplot2-styled",
     "href": "slides/ggsurvfit-examples.html#ggplot2-styled",
     "title": "Additional examples",
     "section": "{ggplot2} styled",
-    "text": "{ggplot2} styled\n\ngg_styled &lt;-\n  gg_default +\n  coord_cartesian(xlim = c(0, 8)) +\n  scale_y_continuous(\n    limits = c(0, 1),\n    labels = scales::percent, \n    expand = c(0.01, 0)\n  ) +\n  scale_x_continuous(breaks = 0:9, expand = c(0.02, 0)) +\n  scale_color_manual(values = c('#54738E', '#82AC7C')) +\n  scale_fill_manual(values = c('#54738E', '#82AC7C')) +\n  theme_minimal() +\n  theme(legend.position = \"bottom\") +\n  guides(color = guide_legend(ncol = 1)) +\n  labs(\n    title = \"{ggplot2} styled\",\n    y = \"Percentage Survival\"\n  )\n\ngg_styled"
+    "text": "{ggplot2} styled\n\ngg_styled &lt;-\n  gg_default +\n  coord_cartesian(xlim = c(0, 8)) +\n  scale_y_continuous(\n    limits = c(0, 1),\n    labels = scales::percent, \n    expand = c(0.01, 0)\n  ) +\n  scale_x_continuous(breaks = 0:9, expand = c(0.02, 0)) +\n  scale_color_manual(values = c('#54738E', '#82AC7C')) +\n  scale_fill_manual(values = c('#54738E', '#82AC7C')) +\n  theme_minimal() +\n  theme(legend.position = \"bottom\") +\n  guides(color = guide_legend(ncol = 1)) +\n  labs(\n    title = \"{ggplot2} styled\",\n    y = \"Percentage Survival\"\n  )\n\nScale for y is already present.\nAdding another scale for y, which will replace the existing scale.\nScale for x is already present.\nAdding another scale for x, which will replace the existing scale.\n\ngg_styled"
   },
   {
     "objectID": "slides/ggsurvfit-examples.html#side-by-side",
@@ -88,14 +88,14 @@
     "href": "slides/ggsurvfit-examples.html#median-summary",
     "title": "Additional examples",
     "section": "Median summary",
-    "text": "Median summary\n\nsurvfit2(Surv(time, status) ~ surg, data = df_colon) |&gt;\n  ggsurvfit(linewidth = 0.8) +\n  add_quantile(y_value = 0.5) +\n  scale_ggsurvfit()"
+    "text": "Median summary\n\nsurvfit2(Surv(time, status) ~ surg, data = df_colon) |&gt;\n  ggsurvfit(linewidth = 0.8) +\n  add_censor_mark() +\n  add_quantile(y_value = 0.5) +\n  scale_ggsurvfit()"
   },
   {
     "objectID": "slides/ggsurvfit-examples.html#at-a-given-timepoint",
     "href": "slides/ggsurvfit-examples.html#at-a-given-timepoint",
     "title": "Additional examples",
     "section": "At a given timepoint",
-    "text": "At a given timepoint\n\nsurvfit2(Surv(time, status) ~ surg, data = df_colon) |&gt;\n  ggsurvfit(linewidth = 0.8) +\n  add_quantile(x_value = 5, linetype = \"solid\", \n               linewidth = 1.0, alpha = 0.3) +\n  scale_ggsurvfit()"
+    "text": "At a given timepoint\n\nsurvfit2(Surv(time, status) ~ surg, data = df_colon) |&gt;\n  ggsurvfit(linewidth = 0.8) +\n  add_censor_mark() +\n  add_quantile(x_value = 5, linetype = \"solid\", \n               linewidth = 1.0, alpha = 0.3) +\n  scale_ggsurvfit()"
   },
   {
     "objectID": "slides/example-data.html",
@@ -256,7 +256,7 @@
     "href": "slides/index.html#can-we-do-better",
     "title": "Visualizing Survival Data with the {ggsurvfit} R Package",
     "section": "Can we do better?",
-    "text": "Can we do better?\n\nThere are many design and analytical choices to be made when designing even a simple KM plot – these choices can lead to wide variation in presentation quality.\n\n\nlibrary(ggsurvfit)\nfit2 &lt;- survfit2(Surv(time, status) ~ surg, data = df_colon) \nggsurvfit(fit2)"
+    "text": "Can we do better?\n\nThere are many design and analytical choices to be made when designing even a simple KM plot – these choices can lead to wide variation in presentation quality.\n\n\nlibrary(ggsurvfit)\nfit2 &lt;- survfit2(Surv(time, status) ~ surg, data = df_colon) \nggsurvfit(fit2) + scale_ggsurvfit()"
   },
   {
     "objectID": "slides/index.html#ggsurvfit-overview",
@@ -277,14 +277,14 @@
     "href": "slides/index.html#ready-to-publish-legends",
     "title": "Visualizing Survival Data with the {ggsurvfit} R Package",
     "section": "Ready to publish legends",
-    "text": "Ready to publish legends\n\nRaw variable names do not appear in the figure\n\n\nfit &lt;- survfit2(Surv(time, status) ~ surg, data = df_colon) \nsurvminer::ggsurvplot(fit)\nggsurvfit(fit)"
+    "text": "Ready to publish legends\n\nRaw variable names do not appear in the figure\n\n\nfit &lt;- survfit2(Surv(time, status) ~ surg, data = df_colon) \nsurvminer::ggsurvplot(fit)\nggsurvfit(fit) + scale_ggsurvfit()"
   },
   {
     "objectID": "slides/index.html#ggsurvfit-defaults",
     "href": "slides/index.html#ggsurvfit-defaults",
     "title": "Visualizing Survival Data with the {ggsurvfit} R Package",
     "section": "{ggsurvfit} defaults",
-    "text": "{ggsurvfit} defaults\n\ngg_default &lt;-\n  survfit2(Surv(time, status) ~ surg, data = df_colon) |&gt;\n  ggsurvfit() +\n  add_confidence_interval() +\n  labs(title = \"Default\")\n\ngg_default"
+    "text": "{ggsurvfit} defaults\n\ngg_default &lt;-\n  survfit2(Surv(time, status) ~ surg, data = df_colon) |&gt;\n  ggsurvfit() +\n  add_confidence_interval() +\n  scale_ggsurvfit() +\n  labs(title = \"Default\")\n\ngg_default"
   },
   {
     "objectID": "slides/index.html#ggplot2-styled",
@@ -340,14 +340,14 @@
     "href": "slides/index.html#median-summary",
     "title": "Visualizing Survival Data with the {ggsurvfit} R Package",
     "section": "Median summary",
-    "text": "Median summary\n\nsurvfit2(Surv(time, status) ~ surg, data = df_colon) |&gt;\n  ggsurvfit(linewidth = 0.8) +\n  add_quantile(y_value = 0.5) +\n  scale_ggsurvfit()"
+    "text": "Median summary\n\nsurvfit2(Surv(time, status) ~ surg, data = df_colon) |&gt;\n  ggsurvfit(linewidth = 0.8) +\n  add_censor_mark() +\n  add_quantile(y_value = 0.5) +\n  scale_ggsurvfit()"
   },
   {
     "objectID": "slides/index.html#at-a-given-timepoint",
     "href": "slides/index.html#at-a-given-timepoint",
     "title": "Visualizing Survival Data with the {ggsurvfit} R Package",
     "section": "At a given timepoint",
-    "text": "At a given timepoint\n\nsurvfit2(Surv(time, status) ~ surg, data = df_colon) |&gt;\n  ggsurvfit(linewidth = 0.8) +\n  add_quantile(x_value = 5, linetype = \"solid\", \n               linewidth = 1.0, alpha = 0.3) +\n  scale_ggsurvfit()"
+    "text": "At a given timepoint\n\nsurvfit2(Surv(time, status) ~ surg, data = df_colon) |&gt;\n  ggsurvfit(linewidth = 0.8) +\n  add_censor_mark() +\n  add_quantile(x_value = 5, linetype = \"solid\", \n               linewidth = 1.0, alpha = 0.3) +\n  scale_ggsurvfit()"
   },
   {
     "objectID": "slides/index.html#what-are-the-elements-of-an-effective-and-publishable-km-plot",
@@ -375,7 +375,7 @@
     "href": "slides/why-ggsurvfit.html",
     "title": "Why {ggsurvfit} ?",
     "section": "",
-    "text": "Each ggsurvfit add-on function is written as a proper ggplot2 geom\nEnables package functions woven with ggplot2 functions seamlessly\nDon’t need to learn to style with ggsurvfit functions\nUse your ggplot2 knowledge if you want to customize\n\nLimitless customization\n\nModify x-axis scales or any other plot feature and risk table will still align with plot\n\nSimple saving and export through ggplot2::ggsave()\n\n\n\n\nRaw variable names do not appear in the figure\n\n\nfit &lt;- survfit2(Surv(time, status) ~ surg, data = df_colon) \nsurvminer::ggsurvplot(fit)\nggsurvfit(fit)"
+    "text": "Each ggsurvfit add-on function is written as a proper ggplot2 geom\nEnables package functions woven with ggplot2 functions seamlessly\nDon’t need to learn to style with ggsurvfit functions\nUse your ggplot2 knowledge if you want to customize\n\nLimitless customization\n\nModify x-axis scales or any other plot feature and risk table will still align with plot\n\nSimple saving and export through ggplot2::ggsave()\n\n\n\n\nRaw variable names do not appear in the figure\n\n\nfit &lt;- survfit2(Surv(time, status) ~ surg, data = df_colon) \nsurvminer::ggsurvplot(fit)\nggsurvfit(fit) + scale_ggsurvfit()"
   },
   {
     "objectID": "slides/why-ggsurvfit.html#use-ggplot2-functions",
@@ -389,6 +389,6 @@
     "href": "slides/why-ggsurvfit.html#ready-to-publish-legends",
     "title": "Why {ggsurvfit} ?",
     "section": "",
-    "text": "Raw variable names do not appear in the figure\n\n\nfit &lt;- survfit2(Surv(time, status) ~ surg, data = df_colon) \nsurvminer::ggsurvplot(fit)\nggsurvfit(fit)"
+    "text": "Raw variable names do not appear in the figure\n\n\nfit &lt;- survfit2(Surv(time, status) ~ surg, data = df_colon) \nsurvminer::ggsurvplot(fit)\nggsurvfit(fit) + scale_ggsurvfit()"
   }
 ]
