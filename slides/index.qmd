@@ -13,8 +13,8 @@ format:
     chalkboard: true
 execute:
   echo: true
-  freeze: auto
-cache: true
+  freeze: false
+cache: false
 ---
 
 {{< include 00-setup.qmd >}}
